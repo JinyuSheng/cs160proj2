@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.4 TeX Preview</title>
+
+<meta name="description" content="Configuring the TeX Preview Settings">
+<meta name="keywords" content="BibDesk Help: 11.4 TeX Preview">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="TeX-Preview-Preferences"></a>
+<p><a name="PreviewPreferences"></a>
+</p><a name="SEC125"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> TeX Preview</h2>
+
+<a name=""></a><META name="keywords" content="preview settings">
+<p>The TeX Preview pane allows you to change the default settings for using 
+LaTeX to generate the contents of the typeset preview window, as described in 
+<a href="BibDeskHelp_30.html#SEC70">Previewing Typeset Output</a>.
+</p>
+<p><img src="gfx/previewPrefs.png" alt="gfx/previewPrefs">
+</p>
+<a name="IDX30"></a><META name="keywords" content="Generate previews using TeX"><p><b>Generate previews using TeX:</b> (More appropriately, use pdflatex for previewing.) 
+If this is checked, the preview pane will be drawn.
+</p>
+<p>If you do not have a TeX installation, clicking the "Download TeX<small>...</small>" button brings you to a 
+webpage that tells you how to get it. 
+</p>
+<a name="IDX31"></a><META name="keywords" content="TeX Program Locations"><p><b>TeX Program Locations:</b> The TeX and BibTeX program paths can be changed here, 
+so you are not tied to one distribution of TeX. You must enter the full path to the binaries for
+ pdflatex and BibTeX, e.g. <code>/usr/local/teTeX/bin/powerpc-apple-darwin-current/pdflatex</code>.
+</p>
+<a name="IDX32"></a><META name="keywords" content="BibTeX style"><p><b>BibTeX style:</b> The BibTeX style file used for the previews (just the name, not the whole path) 
+can be specified here.  This is a list of generic styles that may or may not exist on your system.  If
+you need to use a style that is not in the menu, make sure it's in a location that TeX searches, (commonly
+<code>~/Library/texmf/bibtex/bst</code>), and type the name of the style directly into the text box.
+</p>
+<a name="IDX33"></a><META name="keywords" content="TeX template"><p><b>TeX template:</b> Clicking the "Edit<small>...</small>" button lets you change the 
+template file that is added to the beginning of every saved bib file. for generating the preview. 
+This template file is a great place to put your macros, copyright info (if applicable), 
+or shameless plugs for your software :) You can reset the template file to the default by 
+clicking the "Reset<small>...</small>" button. Be careful though, as this action cannot be undone. 
+</p>
+<a name="IDX34"></a><META name="keywords" content="TeX template encoding"><p><b>TeX template encoding:</b> The encoding popup lets you choose the encoding that is appropriate for the template file and the 
+TeX program you are using. Note that the standard pdflatex and style files does not allow arbitrary 
+Unicode characters. Therefore if you want to use other encodings then ASCII (TeX), you should 
+modify the template and TeX command appropriately. 
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

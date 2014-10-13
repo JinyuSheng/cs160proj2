@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.11 AutoFile</title>
+
+<meta name="description" content="Configuring the AutoFile feature">
+<meta name="keywords" content="BibDesk Help: 11.11 AutoFile">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="AutoFile-Preferences"></a>
+<p><a name="AutoFilePreferences"></a>
+</p><a name="SEC139"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> AutoFile</h2>
+
+<a name=""></a><META name="keywords" content="AutoFile">
+<p>AutoFile lets you choose a folder as your "Papers Folder" to
+automatically move files into when you link to them. You can do this
+to all files at once, or automatically as they are added. Use this
+preference pane to select the Papers Folder and to choose whether to
+automatically move files. 
+</p>
+<p><img src="gfx/autoFilePrefs.png" alt="gfx/autoFilePrefs">
+</p>
+<p>The upper series of checkboxes defines the base path to which the Local File format will
+be applied.  This may be an absolute (fixed) or relative path.  Relative paths are
+specified as a POSIX path relative to the document's path.
+</p>
+<a name="IDX66"></a><META name="keywords" content="File papers in fixed location"><p><b>File papers in fixed location:</b> Papers that are automatically filed by BibDesk will 
+be moved to this folder or a subfolder. The format string used to generate the location of the 
+moved papers is relative to this folder. When the papers folder is empty, the folder 
+containing the document to which the items belong will be used. To get this behavior, deselect 
+the checkbox.
+</p>
+<a name="IDX67"></a><META name="keywords" content="File papers relative to each document"><p><b>File papers relative to each document:</b> When this option is selected, the Local File format 
+format will be appended to the BibTeX document's folder path; to modify this, insert a
+relative path as the first part of your format.
+This option is only available when the papers folder is empty. When you choose this option, 
+make sure that any document is saved before activating AutoFile. 
+</p>
+<a name="IDX68"></a><META name="keywords" content="File papers automatically"><p><b>File papers automatically:</b> When you select this option, BibDesk will automatically 
+move files into the papers folder hierarchy for new items. The new location will be build 
+using a format string, which you can supply using the other controls. 
+See <a href="BibDeskHelp_47.html#SEC96">AutoFile</a> for more information about the Auto File feature. 
+</p>
+<a name="IDX69"></a><META name="keywords" content="Local File Format"><p><b>Local File Format:</b> You can choose from several default cite key
+formats. Choosing "Custom" allows you to set the cite key
+format string to any valid format.
+</p>
+<a name="IDX70"></a><META name="keywords" content="Warn before moving a folder"><p><b>Warn before moving a folder:</b> If you want to be warned before the auto file 
+feature moves a folder, for example if you have accidentally linked your Home folder, 
+rcheck this option.
+</p>
+<p>For a more detailed control over the cite key generation, choose the 
+"Advanced" button. This will reveal a editing sheet with 
+the following additional items. 
+</p>
+<p><img src="gfx/autoFilePrefs-Advanced.png" alt="gfx/autoFilePrefs-Advanced">
+</p>
+<a name="IDX71"></a><META name="keywords" content="Preset Format"><p><b>Preset Format:</b> This is a copy of the popup button in the main pane.
+</p>
+<a name="IDX72"></a><META name="keywords" content="Format String"><p><b>Format String:</b> This text field shows the format string that is used to 
+automatically generate new locations for auto filed papers. The Local File 
+format string can contain several special format specifiers, which are
+a %-character followed by a specifier character and optionally zero to
+two numbers. See <a href="BibDeskHelp_91.html#SEC159">Autogeneration Format Syntax</a> for a
+more detailed description of the syntax. The generated string is interpreted 
+as a file path relative to the Papers Folder. 
+</p>
+<a name="IDX73"></a><META name="keywords" content="Choose a format specifier to add"><p><b>Choose a format specifier to add:</b> This allows you to easily
+add format specifiers at the end of the format string. This popup
+button will only be visible in custom mode.
+</p>
+<a name="IDX74"></a><META name="keywords" content="Generate lowercase file names"><p><b>Generate lowercase file names:</b> Selecting this option will generate 
+paths in all lowercase characters. 
+</p>
+<a name="IDX75"></a><META name="keywords" content="Clean by removing"><p><b>Clean by removing:</b> You can set additional cleaning of generated parts 
+of the parsed format string. Braces are normally used in BibTeX to protect parts of 
+a string from capitalization. You can choose to remove those braces from the 
+generated cite key. You can additionally choose to remove TeX commands. This will 
+also remove the braces. The Windows option will remove also characters that are illegal 
+in file names on Windows systems, so you can share the files with a Windows machine. 
+Choosing the Non-ASCII option will ensure that the generated file name contains 
+only ASCII characters; accented characters are converted if possible. 
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

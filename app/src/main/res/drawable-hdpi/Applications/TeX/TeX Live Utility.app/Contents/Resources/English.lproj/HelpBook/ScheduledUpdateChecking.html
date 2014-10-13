@@ -1,0 +1,53 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Scheduled Update Checking</title>
+		
+		
+		<meta name="description" content="">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+            <div class="Destination">
+            
+        <h2>Scheduled Update Checking</h2>
+                        <div class="item "><span class="">TeX Live Utility can check for updated TeX Live packages automatically, using a <span class="Verbatim">launchd</span> agent that runs at scheduled intervals.  To configure this check, use the <span class="UI">Configure</span> menu, which has an item to display this sheet:</span>                        </div>
+
+                        <div class="item "><span class=""><img src="HelpImages/AutoUpdateSheet.png" class="inline-image"></span>                        </div>
+
+                        <div class="item "><span class="">The scheduling options should be self-explanatory.  For daily checks, you can only adjust the time of day.  For weekly checks, you can adjust the day of the week and the time of day.</span>                        </div>
+
+                        <div class="item "><span class="">10.8 and later</span>                            <div class="item "><span class=""><img src="HelpImages/NotificationCenterUpdate.png" class="inline-image"></span>                            </div>
+                            <div class="item "><span class="">To get the &ldquo;Ignore&rdquo; and &ldquo;Launch&rdquo; buttons to show, you have to wait until you get at least one notification, then change the style to &ldquo;Alerts&rdquo; in the Notifications pane of System Preferences.</span>                            </div>
+                            <div class="item "><span class="">The notification will only be shown if updates are available. This will make sense if you think about it long enough.</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class="">10.7 and earlier</span>                            <div class="item "><span class=""><img src="HelpImages/UpdateCheckAlert.png" class="inline-image"></span>                            </div>
+                        </div>
+
+                        <div class="item Box">                            <div class="item "><span class="">The update check does not actually update anything or modify your system.  The update checker and launchd property list are installed as <span class="Verbatim">~/Library/Application Support/TeX Live Utility/update_check.py </span>and <span class="Verbatim">~/Library/LaunchAgents/com.googlecode.mactlmgr.update_check.plist</span>, respectively.</span>                            </div>
+                            <div class="item "><span class="">It is best to schedule update checks for a time when you are likely to be idle, as the alert can steal focus while you are typing.  At worst, though, all it does is launch TeX Live Utility; nothing is updated automatically!  This is not a problem with the Notification Center alert on 10.8 and later.</span>                            </div>
+                            <div class="item "><span class="">This is distinct from TeX Live Utility's automatic check for application updates (which can also run manually from the <span class="UI">TeX Live Utility</span> menu).</span>                            </div>
+                        </div>
+
+
+            </div>
+            
+
+            <div class="bottom-nav">
+            
+
+                    <span class="left-nav"><a href="PackageInfo.html">← Package Info</a></span>
+                
+
+                    <span class="right-nav"><a href="Repositories.html">Repositories →</a></span>
+                
+
+                &nbsp;<br/>&nbsp;
+            </div>
+            
+
+    </body>
+</html>

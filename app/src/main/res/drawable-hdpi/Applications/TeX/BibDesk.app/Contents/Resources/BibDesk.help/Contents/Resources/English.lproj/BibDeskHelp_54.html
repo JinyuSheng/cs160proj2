@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 9.2 Autocompletion</title>
+
+<meta name="description" content="Autocompletion in edits and external applications.">
+<meta name="keywords" content="BibDesk Help: 9.2 Autocompletion">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Autocompletion"></a>
+<a name="SEC104"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Autocompletion</h2>
+
+<a name=""></a><META name="keywords" content="autocompletion"><a name=""></a><META name="keywords" content="autocomplete"><a name=""></a><META name="keywords" content="completion"><a name=""></a><META name="keywords" content="problems with TextExtras"><a name=""></a><META name="keywords" content="problems with iTeXMac"><a name=""></a><META name="keywords" content="BBEdit"><a name=""></a><META name="keywords" content="LyX">
+<a name="SEC105"></a>
+<h3 class="subheading"> Warning!</h3>
+
+<p><b>The input manager autocompletion plugin is not installed on Mac OS X 10.5 and greater.  Please
+encourage TeX front end developers to include this functionality.  Details and code are available by
+contacting the <a href="mailto:bibdesk-develop@lists.sourceforge.net">BibDesk developers</a>.</b>
+</p>
+<p>BibDesk can install a plugin that lets you search your database and
+insert citation commands conveniently without leaving your text
+editing application. See section <a href="#SEC104">Autocompletion</a> to install
+the plugin and manage the applications that use it.
+</p>
+<p><img src="gfx/autocompleteExample.png" alt="gfx/autocompleteExample">
+</p>
+<a name="SEC106"></a>
+<h3 class="subheading"> What does it do?</h3>
+
+<p>Autocompletion ties into the regular dictionary autocompletion of
+words on Mac OS X 10.3 and greater.  In Cocoa applications (such as
+TextEdit), you can type a cite key followed by a text fragment, such as 
+<samp>`\cite{bib'</samp> and hit the F5 function key to get a list of possible 
+autocompletion entries containing the text <samp>`bib'</samp>.
+</p>
+<p>BibDesk's autocompletion provides possible matches based on the Title,
+Author, Citekey, and Keywords of your currently open BibTeX files.  To
+select an item, hit tab, return, comma, or closing brace as
+appropriate.
+</p>
+<p>If BibDesk is not running when you try to use the autocompletion feature,
+it will launch automatically, and the default bibliography will be searched.
+If you have not set a default bibliography in your preferences 
+(See section <a href="BibDeskHelp_62.html#SEC122">General</a>), you will need
+to open the desired file manually in order for this feature to work.
+</p>
+<p>Note that on laptop keyboards, the "fn" key must
+be used to get the actual F5 key behavior with the default keyboard
+preferences.  Alternatives are to use option-escape, which will also
+trigger autocompletion, or to set up a key binding for the
+<code>complete:</code> selector.
+</p>
+<a name="SEC107"></a>
+<h3 class="subheading"> Bonus feature: reference completion</h3>
+
+<p>The autocompletion input manager will also provide completion for TeX <code>\ref{</code> and <code>\pageref{</code>
+commands, based on all <code>\label</code> commands in the same text file.  For instance, 
+if you have a table labeled "<code>\label{tab:myTable}</code>", you can type "<code>See Table~\ref{tab:m}</code>", 
+hit the same key sequence used for citekey autocompletion, and see a list of all 
+matching entries pop up.  The autocompletion looks for up to seven matching 
+characters, so the more you type, the fewer options you'll be presented with in the list.
+</p>
+<a name="SEC108"></a>
+<h3 class="subheading"> Caveats and known issues</h3>
+
+<p>There is a conflict with the <a href="http://www.lorax.com/FreeStuff/TextExtras.html">TextExtras 1.7</a>
+input manager, so make sure you have the latest TextExtras installed.
+</p>
+<p>By default, <a href="http://itexmac.sourceforge.net">iTeXMac 1.3</a> does not support the keybinding for
+autocompletion, but it can easily be made to work by adding a <code>complete:</code> keybinding to 
+<code>~/Library/Application Support/iTeXMac/Key Bindings/TextKeyBinding.dict</code>.  
+The following snippet binds control-u to autocompletion:
+</p>
+<p><code>&lt;key&gt;^u&lt;/key&gt;</code> <br/>
+<code>&lt;string&gt;complete:&lt;/string&gt;</code>
+</p>
+<a name="SEC109"></a>
+<h3 class="subheading"> Alternatives</h3>
+
+<p>For <a href="http://barebones.com/">BBEdit</a> users, Curt Clifton has written an AppleScript 
+to provide similar functionality.  It can be obtained from 
+<a href="http://www.cs.iastate.edu/~cclifton/software.shtml">http://www.cs.iastate.edu/~cclifton/software.shtml</a>.  
+</p>
+<p>For <a href="http://www.lyx.org/">LyX</a> users, Mark Reid has written an AppleScript to push BibDesk citations
+to LyX, and his script is available at <a href="http://www.threewordslong.com/projects/misc/bibdesktolyx/">http://www.threewordslong.com/projects/misc/bibdesktolyx/</a>.
+</p>
+<p>BibDesk also provides a Distributed Objects API for developers to search for publications.  
+See the <a href="http://sourceforge.net/apps/mediawiki/bibdesk/index.php?title=Other_Applications">BibDesk Wiki</a> for details and examples.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

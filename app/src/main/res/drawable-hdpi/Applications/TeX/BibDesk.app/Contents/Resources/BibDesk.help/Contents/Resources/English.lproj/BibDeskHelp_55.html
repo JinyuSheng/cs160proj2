@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 9.3 System Service</title>
+
+<meta name="description" content="BibDesk System Services.">
+<meta name="keywords" content="BibDesk Help: 9.3 System Service">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="System-Service"></a>
+<a name="SEC110"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> System Service</h2>
+
+<a name=""></a><META name="keywords" content="system service"><a name=""></a><META name="keywords" content="services">
+<p>If you can't use the autocompletion plugin because your favorite text
+editor is not compatible (for instance BBEdit or TextWrangler), you
+will be able to use the installed OS X System Services to do much of
+the same thing. 
+</p>
+<p>The services also perform some searching functionality which can help
+if you don't have a photographic memory of citation keys.
+</p>
+<a name="SEC111"></a>
+<h2 class="heading"> Complete Citation</h2>
+
+<p>In any Services aware app (including: TeXShop, iTeXMac, TextEdit, 
+BBEdit, and TextWrangler, but no Classic or X11 apps) type a
+string, select it, then choose "Complete Citation" from the BibDesk
+submenu of the Services Menu. This will replace the selected string
+with the citation(s) of any entries in open BibDesk documents (or, if
+BibDesk is not open yet, in the default bibliography set in
+<a href="BibDeskHelp_62.html#SEC122">General</a> Preferences) whose titles contain that
+string. So:
+</p>
+<p><img src="gfx/serviceBefore.png" alt="gfx/serviceBefore">
+</p>
+<p>becomes:
+</p>
+<p><img src="gfx/serviceAfter.png" alt="gfx/serviceAfter">
+</p>
+<p>You can search more than just the title from the service.
+Both of the next two examples search for the string "foo" in the title:
+</p><table><tr><td>&nbsp;</td><td><pre>"foo"
+</pre></td></tr></table><table><tr><td>&nbsp;</td><td><pre>"Title = foo"
+</pre></td></tr></table>
+<p>The next example searches for a publication with "Baz" in the
+author, "foo" in the title, and "Jan" in the month:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>"Author = Baz &amp; Title = foo &amp; Month = Jan"
+</pre></td></tr></table>
+<p>The "Complete Citation" service uses a template for the 
+actual output. If you want to use a different style, you can modify the templates.
+See the <a href="BibDeskHelp_69.html#SEC131">Template Preferences</a> to learn how to change the 
+template file to use and <a href="BibDeskHelp_57.html#SEC115">Templates</a> on how to write templates. 
+</p>
+<a name="SEC112"></a>
+<h2 class="heading"> Complete Bibliography</h2>
+
+<p>There are two other services available that can insert a more extensive 
+bibliography description for the items. 
+They work basically the same as the "Complete Citation" service. Choose the 
+"Complete Text Bibliography" service menu item to get the bibliography 
+as plain text. If you choose the "Complete Rich Text Bibliography", 
+you wil get the biblography as formatted text (RTF). Both these commands also use 
+templates. 
+</p>
+<a name="SEC113"></a>
+<h2 class="heading"> Complete Cite Key</h2>
+
+<p>Another service is available, called "Complete Cite Key" which allows
+you to highlight a part of a citation key and BibDesk will complete
+the key for you. For instance, in our example , selecting
+"CasO" and invoking the "Complete Cite Key"
+service would insert "CasObe00".
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

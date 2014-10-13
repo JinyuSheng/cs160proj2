@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 5.10.1 Field Groups</title>
+
+<meta name="description" content="BibDesk Help: 5.10.1 Field Groups">
+<meta name="keywords" content="BibDesk Help: 5.10.1 Field Groups">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Field-Groups"></a>
+<a name="SEC76"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Field Groups</h3>
+
+<a name=""></a><META name="keywords" content="field group">
+<a name="SEC77"></a>
+<h3 class="subheading"> Features</h3>
+
+<p>Field Groups organize entries based on the contents of a certain field, 
+the <samp>`group field,'</samp> such as e.g. the <samp>`Keywords'</samp>, <samp>`Author'</samp>, or <samp>`Journal'</samp> field.
+</p>
+<p>In order to select a field to use as a group field, use the "Group Field" menu 
+from the "View" menu, or the contextual menu of the field group header item.
+Add a new BibTeX field name to this menu, or use one of the existing options.
+When you choose a group field from the "Group Field" menu, a list of all
+possible groups is automatically constructed and updated, using the contents of the selected 
+field for all entries in your file.  
+</p>
+<a name="SEC78"></a>
+<h3 class="subheading"> Example</h3>
+
+<p>Suppose you use the <samp>`Keywords'</samp> field to group entries.  If you
+have an entry with <samp>`Keywords = {models, constitutive relation, cohesion}'</samp>
+and another entry with <samp>`Keywords = {Models, constitutive, stress, cohesion}'</samp>,
+your group list will show 6 groups: 
+<samp>`models, constitutive relation, cohesion, Models, constitutive, stress'</samp>.
+A few points to note:  groups are case-sensitive, and partial matches are not accepted, and
+one group (cohesion) will have two entries visible when it is selected in the group list.
+Separators that are recognized for groups are <samp>`;:,'</samp> and <samp>`and'</samp>, at present.
+<samp>`and'</samp> will be ignored as separator when the entry contains any of the separator characters. 
+The separator characters can be changed with a hidden preference using Terminal.app. 
+To change it to, say, <samp>`;,'</samp>, quit BibDesk and enter the following command in Terminal (exclude double quotes): 
+"<code>defaults write -app BibDesk BDSKGroupFieldSeparatorCharactersKey ';,'</code>"
+then hit return.
+</p>
+<p>You can add entries or files to a group via drag-and-drop by dragging the selected files to a
+particular group's icon.  New items created in BibDesk are added to the presently selected group, 
+but items dragged into the main publications list are not added to a group (think of the danger of
+using <samp>`Journal'</samp> as a group, and adding publications to that group!).
+</p>
+<p>The default group separator is a semicolon followed by a single space <samp>`; '</samp>, but this can be
+changed with a hidden preference using Terminal.app.  To change the separator to a comma
+followed by a single space, quit BibDesk and enter the following command in Terminal (exclude double quotes): 
+"<code>defaults write -app BibDesk BDSKDefaultGroupFieldSeparatorKey ', '</code>"
+then hit return.
+</p>
+<a name="SEC79"></a>
+<h3 class="subheading"> Editing</h3>
+
+<p>Field groups can be edited:  Changing the name of the group, will change the current value of
+the current group field for all the items in the group.  In the case of authors, they will be matched 
+using fuzzy logic, so be sure that you really want to change the author name for all items in the group!
+</p>
+<p>For authors, you can get more info about the author using the command "Get Info" 
+(&#8984;I
+) from the "File" menu. 
+</p>
+<p>Using the "delete" key to delete an item while a group is selected will result in the removal
+of that item from the present group.  To delete the item from the database while a group is
+selected, use &#8997;
+-delete.  To see the group equivalents for "Edit" menu commands,
+hold down the &#8997;
+ key while the "Edit" menu is displayed.
+</p>
+<p>
+
+</p>
+</body>
+</html>

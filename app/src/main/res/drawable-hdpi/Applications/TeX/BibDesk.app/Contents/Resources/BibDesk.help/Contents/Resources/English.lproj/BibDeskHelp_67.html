@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.6 Files</title>
+
+<meta name="description" content="Configuring Saving and Reading Defaults">
+<meta name="keywords" content="BibDesk Help: 11.6 Files">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Files-Preferences"></a>
+<p><a name="FilesPreferences"></a>
+</p><a name="SEC127"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Files</h2>
+
+<a name=""></a><META name="keywords" content="saving files"><a name=""></a><META name="keywords" content="reading files">
+<p>Using the Files preference pane you can change the way BibDesk saves and reads BibTeX files. 
+</p>
+<p><img src="gfx/filesPrefs.png" alt="gfx/filesPrefs">
+</p>
+<a name="IDX39"></a><META name="keywords" content="String Encoding"><p><b>String Encoding:</b> This popup menu allows you to select the encoding used to open 
+BibTeX files by double-clicking on them in the Finder.
+</p>
+<p><a name="encoding_002dnotes"></a>
+Specific notes and warnings:
+</p><ul class="toc">
+<li> Files may be run through the <a href="BibDeskHelp_90.html#SEC156">Character Conversion</a> process when 
+opened so that accented characters display properly.
+</li><li> Files opened with a given encoding will be saved with that encoding.  
+ To save with an alternate encoding, choose the
+"File &gt; Save As<small>...</small>" menu option and select a particular encoding.  
+</li></ul>
+
+<a name="IDX40"></a><META name="keywords" content="Unicode to TeX Conversion"><p><b>Unicode to TeX Conversion:</b> Characters will only be converted to TeX when this 
+checkbox for character conversion is marked. Otherwise, they are written out as displayed in BibDesk.
+You can add <a href="BibDeskHelp_68.html#SEC129">Custom Character Conversions</a> by clicking the "Edit<small>...</small>" button. 
+The custom character conversions can be removed by clicking the "Reset<small>...</small>" button. 
+Be careful though, as you can not undo this action. 
+</p>
+<p>The next four preference options control what data will be written when you save a BibTeX .bib file. 
+</p>
+<a name="IDX41"></a><META name="keywords" content="Use normalized author names when saving"><p><b>Use normalized author names when saving:</b> If you select this checkbox, author names 
+will be saved in the standard BibTeX form 'von Last, Jr, First' in the .bib file. 
+Note that author names containing macros will always be saved as they are entered, 
+even if you select this option. 
+</p>
+<a name="IDX42"></a><META name="keywords" content="Save Annote and Abstract fields at the end of the items"><p><b>Save Annote and Abstract fields at the end of the items:</b> Selecting this option 
+will ensure that the Annote and Abstract fields of any item is saved at the end of the 
+record for that item in the BibteX file. As these fields can be long, choosing this option 
+can restrict data loss on systems with restricted internal memory. 
+</p>
+<a name="IDX43"></a><META name="keywords" content="Write template file at the front of every file when saving"><p><b>Write template file at the front of every file when saving:</b> If you select this 
+option, the template file will be written at the front of every BibTeX file when it is saved. 
+You can view and edit the template file by clicking the "Edit<small>...</small>" button. 
+You can reset the template file to the default by clicking the "Reset<small>...</small>" button. 
+Be careful though, as you can not undo this action. 
+</p>
+<a name="IDX44"></a><META name="keywords" content="Automatically save a backup document"><p><b>Automatically save a backup document:</b> Checking this option lets BibDesk automatically save 
+a backup of the open bibtex databases, so you won't loose your changes.  
+You can choose how often BibDesk saves a backup.
+</p>
+<a name="IDX45"></a><META name="keywords" content="Display warnings when opening a file"><p><b>Display warnings when opening a file:</b> If you check this option, the warnings and errors 
+will be shown automatically when you open a file that contains errors. Note that you can always check the 
+errors and warning by showing the Error Panel, as described in <a href="BibDeskHelp_85.html#SEC149">Getting More Help</a>. 
+</p>
+
+<a name="SEC128"></a>
+<h3 class="subheading"> Advanced</h3>
+
+<table border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="BibDeskHelp_68.html#SEC129">Custom Character Conversions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<p>
+
+</p>
+</body>
+</html>

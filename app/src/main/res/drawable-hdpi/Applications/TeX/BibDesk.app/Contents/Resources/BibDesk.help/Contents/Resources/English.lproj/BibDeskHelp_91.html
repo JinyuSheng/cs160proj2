@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: E. Autogeneration Format Syntax</title>
+
+<meta name="description" content="The syntax of the format used for Cite Key and Local File AutoGeneration.">
+<meta name="keywords" content="BibDesk Help: E. Autogeneration Format Syntax">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Autogeneration-Format-Syntax"></a>
+<p><a name="AutogenerationFormatSyntax"></a>
+</p><a name="SEC159"></a>
+<h1 class="appendix"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Autogeneration Format Syntax</h1>
+
+<a name="SEC160"></a>
+<h2 class="heading"> Syntax of the format</h2>
+
+<p>The format is used for autogeneration of certain values, such as the cite key 
+and linked file names. The format is a string containing special format specifiers, 
+which are replaced by strings determined by the bibliography data. 
+Most format specifiers have the form of a %-character followed by a single character. 
+It can be followed by optional digits, and extra optional parameters enclosed in square brackets, 
+which serve as parameters for the format specifier. Possible format specifiers are given in the table below. 
+The specifiers are displayed in blue, the optional parameters in green. 
+</p>
+
+
+
+
+
+
+
+
+
+
+<table>
+<thead><tr><th><p> Specifier </p></th><th><p> Replaced content description </p></th><th><p> Optional parameters
+</p></th></tr></thead>
+<tr><td> <span class="spec">%a</span><span class="param">[][]00</span>
+
+</td><td><p> Author last names
+</p></td><td><p> name separator, et al., max number of names, max name length
+</p></td></tr>
+<tr><td> <span class="spec">%A</span><span class="param">[;][.][]0</span>
+
+</td><td><p> Author names with initials
+</p></td><td><p> name separator, initial separator, et al., max number of names
+</p></td></tr>
+<tr><td> <span class="spec">%p</span><span class="param">[][]00</span>
+
+</td><td><p> Author or editor last names
+</p></td><td><p> name separator, et al., max number of names, max name length
+</p></td></tr>
+<tr><td> <span class="spec">%P</span><span class="param">[;][.][]0</span>
+
+</td><td><p> Author or editor names with initials
+</p></td><td><p> name separator, initial separator, et al., max number of names
+</p></td></tr>
+<tr><td> <span class="spec">%t</span><span class="param">0 </span>
+
+</td><td><p> Title
+</p></td><td><p> max length
+</p></td></tr>
+<tr><td> <span class="spec">%T</span><span class="param">[]0 </span>
+
+</td><td><p> Title
+</p></td><td><p> max length of words to ignore, max number of words
+</p></td></tr>
+<tr><td> <span class="spec">%y</span>
+
+</td><td><p> Year without century
+</p></td></tr>
+<tr><td> <span class="spec">%Y</span>
+
+</td><td><p> Year with century
+</p></td></tr>
+<tr><td> <span class="spec">%m</span>
+
+</td><td><p> Month as decimal number
+</p></td></tr>
+<tr><td> <span class="spec">%k</span><span class="param">[/][]0 </span>
+
+</td><td><p> Keywords concatenated together
+</p></td><td><p> slash replacement, separator, max number of keywords
+</p></td></tr>
+<tr><td> <span class="spec">%l</span>
+
+</td><td><p> File name of the linked file, without extension
+</p></td></tr>
+<tr><td> <span class="spec">%L</span>
+
+</td><td><p> File name of the linked file, with extension
+</p></td></tr>
+<tr><td> <span class="spec">%e</span>
+
+</td><td><p> File extension of the linked file, including dot
+</p></td></tr>
+<tr><td> <span class="spec">%b</span>
+
+</td><td><p> Bibliography document file name, without extension
+</p></td></tr>
+<tr><td> <span class="spec">%f{</span><i>Field</i><span class="spec">}</span><span class="param">[/]0 </span>
+
+</td><td><p> Arbitrary field, also <samp>`Cite Key'</samp> or <samp>`BibTeX Type'</samp>
+</p></td><td><p> slash replacement, max length
+</p></td></tr>
+<tr><td> <span class="spec">%w{</span><i>Field</i><span class="spec">}</span><span class="param">[ ][/][]0 </span>
+
+</td><td><p> Words of arbitrary field
+</p></td><td><p> separator characters, slash replacement, separator, max number of words
+</p></td></tr>
+<tr><td> <span class="spec">%c{</span><i>Field</i><span class="spec">}</span><span class="param">3</span>
+
+</td><td><p> Arbitrary field as initials (acronym)
+</p></td><td><p> max length of words to ignore
+</p></td></tr>
+<tr><td> <span class="spec">%s{</span><i>Field</i><span class="spec">}</span><span class="param">[][][]0 </span>
+
+</td><td><p> Arbitrary field switch
+</p></td><td><p> <samp>`Yes'</samp>/non-empty, <samp>`No'</samp>/empty, <samp>`Mixed'</samp>, max length
+</p></td></tr>
+<tr><td> <span class="spec">%i{</span><i>Key</i><span class="spec">}</span><span class="param">0 </span>
+
+</td><td><p> Arbitrary document info key
+</p></td><td><p> max length
+</p></td></tr>
+<tr><td> <span class="spec">%u</span><span class="param">[]1</span>
+
+</td><td><p> Unique lowercase letter (use only once)
+</p></td><td><p> separator, min number of characters
+</p></td></tr>
+<tr><td> <span class="spec">%U</span><span class="param">[]1</span>
+
+</td><td><p> Unique uppercase letter (use only once)
+</p></td><td><p> separator, min number of characters
+</p></td></tr>
+<tr><td> <span class="spec">%n</span><span class="param">[]1</span>
+
+</td><td><p> Unique number (use only once)
+</p></td><td><p> separator, min number of characters
+</p></td></tr>
+<tr><td> <span class="spec">%0</span>
+
+</td><td><p> Escaped digit (0-9)
+</p></td></tr>
+<tr><td> <span class="spec">%%</span>
+
+</td><td><p> Escaped percent character (if allowed)
+</p></td></tr>
+<tr><td> <span class="spec">%[</span>
+
+</td><td><p> Escaped square bracket (if allowed)
+</p></td></tr>
+<tr><td> <span class="spec">%]</span>
+
+</td><td><p> Escaped square bracket (if allowed)
+</p></td></tr>
+</table>
+
+<p>In the table above, green characters after the specifiers 
+indicate the optional parameters. The first number after an author specifier, 
+the number of authors, should be a single digit. It can be negative to indicate last authors. 
+Indicated in the table are the parameter values that are used when they are not entered. 
+</p>
+<p>The special value of zero for an optional parameter is interpreted either as 
+<em>all</em> (for the <samp>`author'</samp>, <samp>`title'</samp>, or <samp>`field'</samp> specifiers), 
+<em>sufficient</em> (for the <samp>`unique'</samp> specifiers, i.e., sufficient to create a unique cite key), 
+or <em>none</em> (for the <samp>`random'</samp> specifiers). 
+</p>
+<p>The format can contain only a single one of the <samp>`unique'</samp> specifiers 
+<span class="spec">%u</span>
+, <span class="spec">%U</span>
+ and <span class="spec">%n</span>
+. 
+</p>
+<p>The optional parameters delimited by square brackets after an author specifier 
+can be used to control the separator between author names and an optional <samp>`et al.'</samp> suffix. 
+For <span class="spec">%A</span>
+, the first one is the separator between two author names, 
+and the second one is the separator between the last name and the first initial. 
+</p>
+<p>The optional parameter delimited by square brackets after a title specifier <span class="spec">%T</span>
+ denotes 
+the maximum length of words to be dropped. If this arguments is missing, 
+words with length up to 3 are not counted, but they are included. 
+</p>
+<p>The optional parameter delimited by square brackets after one of the <samp>`unique'</samp> specifiers 
+<span class="spec">%u</span>
+, <span class="spec">%U</span>
+ and <span class="spec">%n</span>
+ is a separator inserted before the added unique characters. 
+This character is not inserted when no unique characters are added.
+</p>
+<p>In the local file format the slash-character (/) has a special meaning, as it is used 
+to build the (UNIX style) folder hierarchy. This is usually not what you want generated 
+parts of the format to do. Therefore in the <samp>`author'</samp> and <samp>`title'</samp> slashes 
+are always replaced by dashes (-) for the local file format. The same replacement is also 
+performed by default for the <samp>`keyword'</samp>, <samp>`field'</samp> or <samp>`words'</samp> specifiers. 
+These latter two however can have an optional parameters delimited by square brackets, 
+which can be used to set the replacement string to another value. In particular, setting 
+the argument between brackets to slash (/), no replacement will be made. This is also 
+the default behavior in the cite key format.
+</p>
+<p>Because a number right after most specifiers is interpreted as an optional parameter, 
+in order to use explicit digits right after a format specifier, one should use one of 
+the escape specifiers <span class="spec">%0</span>
+-<span class="spec">%9</span>
+. 
+</p>
+<p>The cite key format can contain, apart from the specifiers, only unaccented 
+alphanumeric characters (a-zA-Z0-9), (semi-)colons (:;), dashes (-), slashes (/) or periods (.). 
+Any generated part of the cite key will be converted to contain only those characters. 
+For example, accents are removed and spaces will be converted to dashes. 
+</p>
+<p>Keywords are, by default, separated by one of ;:, (semicolon, colon, or comma.) 
+The precise way keywords are separated and how to change these defaults is described in <a href="BibDeskHelp_33.html#SEC76">Field Groups</a>. 
+</p>
+<p>The format for the local file can contain any character apart from colons (:). 
+To use an explicit percent character, use the escape specifier <span class="spec">%%</span>
+</p> 
+<p>(except inside an optional argument delimited by square brackets). Also note the special 
+treatment of the slash (/) noted above. 
+</p>
+<a name="SEC161"></a>
+<h2 class="heading"> Examples</h2>
+
+<table><tr><td>&nbsp;</td><td><pre><em>Bibliography:</em>
+M. McCracken, A. Maxwell, J. Howison, M. Routley, S. Spiegel, S. S. Porst, and C. M. Hofman,
+BibDesk, a great application to manage your bibliographies,
+Source Forge, 1:96, 11 2004.
+</pre></td></tr></table>
+<dl compact="compact">
+<dt> Format string:</dt>
+<dd><span class="spec">%a</span><span class="param">1</span>
+<b>:</b>
+<span class="spec">%Y</span>
+<span class="spec">%u</span><span class="param">2</span>
+
+</dd>
+<dt> Resulting value:</dt>
+<dd><p>McCracken:2004yc
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> Format string:</dt>
+<dd><span class="spec">%a</span><span class="param">1</span>
+<b>:</b>
+<span class="spec">%Y</span>
+<span class="spec">%u</span>
+
+</dd>
+<dt> Resulting value:</dt>
+<dd><p>McCracken:2004b
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> Format string:</dt>
+<dd><span class="spec">%a</span><span class="param">03</span>
+<span class="spec">%y</span>
+<span class="spec">%m</span>
+
+</dd>
+<dt> Resulting value:</dt>
+<dd><p>McCMaxHowRouSpiPorHof0411
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> Format string:</dt>
+<dd><span class="spec">%A</span><span class="param">[;][.][;etal]2</span>
+<b>:</b>
+<span class="spec">%y</span>
+<span class="spec">%t</span><span class="param">20</span>
+
+</dd>
+<dt> Resulting value:</dt>
+<dd><p>McCracken.M;Maxwell.A;etal:2004BibDesk-a-great-appl
+</p></dd>
+</dl>
+
+<dl compact="compact">
+<dt> Format string:</dt>
+<dd><span class="spec">%a</span><span class="param">[;][;etal]24</span>
+<b>:</b>
+<span class="spec">%c{</span><i>Journal</i><span class="spec">}</span>
+<span class="spec">%f{</span><i>Volume</i><span class="spec">}</span>
+
+</dd>
+<dt> Resulting value:</dt>
+<dd><p>McCr;Maxw;etal:SF1
+</p></dd>
+</dl>
+
+<a name="SEC162"></a>
+<h2 class="heading"> Setting the cite key format</h2>
+
+<p>See the discussion in <a href="BibDeskHelp_75.html#SEC138">Cite Key</a> Preferences for
+details on how to set the cite key format.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

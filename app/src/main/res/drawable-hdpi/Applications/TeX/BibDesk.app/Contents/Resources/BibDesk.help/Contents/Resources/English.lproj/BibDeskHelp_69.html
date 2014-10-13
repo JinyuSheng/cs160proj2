@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.7 Templates</title>
+
+<meta name="description" content="Configuring Templates for Export and Services">
+<meta name="keywords" content="BibDesk Help: 11.7 Templates">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Template-Preferences"></a>
+<p><a name="TemplatePreferences"></a>
+</p><a name="SEC131"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Templates</h2>
+
+<a name=""></a><META name="keywords" content="templates"><a name=""></a><META name="keywords" content="export templates"><a name=""></a><META name="keywords" content="service templates">
+<p>Using the Templates preference pane you can customize the templates that BibDesk uses for 
+export to various other file formats and for some Services menu items. 
+</p>
+<p>See <a href="BibDeskHelp_93.html#SEC166">Appendix Template Tags</a> for more information about template files. 
+</p>
+<p><img src="gfx/templatePrefs.png" alt="gfx/templatePrefs">
+</p>
+<a name="IDX46"></a><META name="keywords" content="Templates"><p><b>Templates:</b> In the table you can view and change the templates. In the right column you 
+can choose the file type for the template, which will be used for the extension of the exported file. 
+</p>
+<p>Each template has one or more files associated to it. They are shown when you click on the triangle 
+to the left of the template name. The right column for the files shows the role of the file in the template parsing. 
+Each template should have at least a Main Page template, which is the main template file used to export 
+all the publications. Optionally, there can be additional template files used for the individual publications. 
+These are only used when the Main Page template file contains a template tag for <code>publicationsUsingTemplate</code>. 
+In this case, there should be at least a template file with role Default Item. You can add separate item 
+template files that are used for publications of a particular type, such as <code>book</code>. 
+Furthermore you can add any number of Accesory Files, which are saved together with the exported file. 
+For example, this could be a separate .css style sheet file for an HTML export. 
+</p>
+<p>You can add new templates and new template files using the "+" button. Templates and template files 
+can be removed using the "-" button. 
+</p>
+<p>To change the file used for the template, double-click on the name of the file you want to change, 
+and you will be presented with a dialog to choose a file in your file system. You can view or edit 
+a template file using the contextual menu. Control-click (or right click) on the file name.  
+</p>
+<a name="IDX47"></a><META name="keywords" content="Export templates / Service templates"><p><b>Export templates / Service templates:</b> Choose if you want to see the templates used for 
+the Export menu or for the Services menu. 
+</p>
+<a name="IDX48"></a><META name="keywords" content="Reset Defaults Files"><p><b>Reset Defaults Files:</b> You can reset the default export and service template files to 
+their original content by clicking this button. Be careful though, as you can not undo this action. 
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

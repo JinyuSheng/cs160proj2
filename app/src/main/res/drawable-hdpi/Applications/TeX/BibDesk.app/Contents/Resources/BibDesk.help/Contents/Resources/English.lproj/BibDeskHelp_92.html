@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: F. Character Encodings</title>
+
+<meta name="description" content="Discussion of character encodings.">
+<meta name="keywords" content="BibDesk Help: F. Character Encodings">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Character-Encodings"></a>
+<a name="SEC163"></a>
+<h1 class="appendix"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Character Encodings</h1>
+
+<a name=""></a><META name="keywords" content="encoding"><a name=""></a><META name="keywords" content="string encoding"><a name=""></a><META name="keywords" content="character encoding">
+<a name="SEC164"></a>
+<h2 class="heading"> What is encoding?</h2>
+
+<p>We will not attempt to answer this question in detail, other than to briefly present the practical 
+ramifications of different character encodings. For historical background, see 
+<a href="http://www.joelonsoftware.com/articles/Unicode.html">this article</a> or do a 
+<a href="http://www.google.com/search?hl=en&amp;lr=&amp;q=what+is+character+encoding%3F&amp;btnG=Search">Google Search</a>
+on character encoding. It is assumed that if you use TeX, you understand that if you use non-ASCII characters in a document, you have 
+to pay attention to the character encoding and possibly use a special package that recognizes the text that you input. 
+</p>
+<p>The basic problem at hand is that characters represented on disk as bytes can be interpred differently. 
+Hence, opening a file that is UTF-8 encoded under the assumption that it is Latin-1 encoded can lead to a loss of 
+information; some characters may not be read or displayed correctly, and if the document is 
+saved in this state, the data is permanently lost. TeX works around this problem by using 
+{\"u} for the "&#252;" character, since ASCII characters are essentially a  lowest common denominator 
+among most of the existing character sets. 
+</p>
+<a name="SEC165"></a>
+<h2 class="heading"> What encoding should I use?</h2>
+
+<p>In general, pick an encoding that will be compatible with all systems the document will be used on. 
+On Macintosh systems in Western countries, the default encoding is MacRoman; this is understood by
+all Apple computers, but users on other platforms may have difficulty reading the files 
+(generally because they assume a different encoding). 
+The UTF-8 encoding is a superset of ASCII, and is a more modern choice that supports extended 
+character sets; it also works with <a href="http://scripts.sil.org/xetex/">XeTeX</a>, a Unicode-based TeX system for Mac OS X. 
+Windows computers (or users thereof) generally assume Windows Latin 1 or ISO Latin 1 (8859-1) 
+encoding, which is a widely used character encoding for Western European scripts (but is incompatible with UTF-8).
+</p>
+<p><em>The "Non-lossy ASCII" encoding provided by BibDesk should not be used unless you have a very specific
+need for that encoding; it is not compatible with TeX accented character sequences, but some users
+need it for other reasons.</em>
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

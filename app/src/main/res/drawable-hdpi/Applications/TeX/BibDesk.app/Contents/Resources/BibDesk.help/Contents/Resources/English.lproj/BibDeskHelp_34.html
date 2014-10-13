@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 5.10.2 Smart Groups</title>
+
+<meta name="description" content="BibDesk Help: 5.10.2 Smart Groups">
+<meta name="keywords" content="BibDesk Help: 5.10.2 Smart Groups">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Smart-Groups"></a>
+<a name="SEC80"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Smart Groups</h3>
+
+<a name=""></a><META name="keywords" content="smart group"><a name=""></a><META name="keywords" content="<code>Option-Cmd-G</code>"><a name=""></a><META name="keywords" content="<code>Cmd-I</code>">
+<p>BibDesk supports smart groups that dynamically change their content based on a list of
+user-specified criteria.  To add a smart group, use the command "New Smart Group" (&#8997;&#8984;G
+)
+from the "File" menu.  Additional search criteria can be added using the round "+" button,
+and removed using the round "-" button, while the popup menu at the top of the panel can be used to
+specify whether "all" or "any" of the additional criteria are matched.  This feature offers more flexible
+searching than the standard Boolean quicksearch, and is always available.
+</p>
+<p>The search criteria can later edit using thecommand "Get Info" (&#8984;I
+) in the "File" menu, 
+or in the contextual menhu for the group.  Its name can be changed after doubleclicking the group or 
+choosing the appropriate contextual menu item. 
+</p>
+<p>Smart groups are stored in the <samp>`@comment'</samp> field of your BibTeX file.  The format is that of a Mac OS X
+XML property list, but you should <em>not</em> modify the comment with a text editor, or rely on the format remaining
+consistent across versions of BibDesk.  Some BibTeX editors may not preserve the contents of the <samp>`@comment'</samp>
+field, unfortunately (early versions of BibDesk didn't preserve it, either).
+</p>
+<p>Text-based fields are compared case-insensitively, for the criteria specified.  The BibDesk <samp>`Date-Modified'</samp>
+and <samp>`Date-Created'</samp> fields are handled specially.  You can enter date ranges in various convenient ways.  
+Date comparisons are automatically updated several times per day, so the relative comparison should
+always be true.
+</p>
+<p>
+
+</p>
+</body>
+</html>

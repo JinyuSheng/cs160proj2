@@ -1,0 +1,210 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = ConTeXt (LuaTeX)
+
+% "Hello world!" document for the ConTeXt typesetting system
+%
+% Written on 2006-12-29 by Sanjoy Mahajan  <sanjoy@mit.edu>
+% and adapted for MacTeX 2012.
+% 
+% This document is the public domain (no copyright).
+
+% \setupcolors is only needed for ConTeXt MKII, otherwise you get greyscale
+\setupcolors
+	[state=start]
+
+% Let's use the color #aa9922 from MacTeX's webpage for the title
+\definecolor
+	[headingcolor]
+	[r=0.666,g=0.6,b=0.133]
+
+% An alternative way to specify the same color is
+% \definecolor
+%     [headingcolor]
+%     [h=aa9922]
+
+\setupinteraction
+	[state=start,          % make hyperlinks active, etc.
+	 color=blue,           % color of hyperlinks can be blue
+	 style=normal,
+    ]
+
+% define MacTeX logo
+\logo [MACTEX] {Mac\TeX}
+
+% predefined URLs
+\useURL[sanjoy]      [mailto:sanjoy@mit.edu]        [][sanjoy@mit.edu]
+\useURL[wiki]        [http://wiki.contextgarden.net][][\ConTeXt\ wiki]
+\useURL[mactex]      [http://tug.org/mactex]        [][\MACTEX]
+
+% for US paper uncomment the line below;
+% the sensible default is [A4][A4] (A4 typesetting, printed on A4 paper)
+% \setuppapersize [letter][letter]
+
+\setuplayout
+	[topspace=0.5in,
+	 backspace=1in, % distance between left edge and text
+	 header=24pt,
+	 footer=36pt,
+	 width=middle,  % equal distance from text to left and right edge; you can also provide dimension
+	 height=middle]
+
+% uncomment the next line to see the layout
+% \showframe
+
+% headers and footers
+\setupfooter
+	[style=italic]
+
+\setupfootertexts[\date][\CONTEXT\space template]
+
+\setuppagenumbering
+	[location={header,right},
+	 style=bolditalic]
+
+\setupbodyfont
+	[11pt] % default is 12pt
+
+\setuphead
+	[color=headingcolor]
+
+\setuphead
+	[chapter, title]
+	[style={\ssd}]
+
+\setuphead
+	[section,subject]
+	[style={\ssa},
+	 before={\blank[2*big]},
+	 after={\blank[medium]}]
+
+
+% ConTeXt does not come with any defaults for title.
+% So you need to define your own.
+
+\startsetups setup:document
+  \framed[frame=off, foregroundstyle=\ssd, foregroundcolor=headingcolor, align=normal, width=broad]
+      {\getvariable{document}{title}}
+   \expanded{\useURL[author-email][mailto:\getvariable{document}{email}][][\getvariable{document}{email}]}
+  \doifsomething{\getvariable{document}{author}}
+  {\blank[small]
+   \framed[frame=off, foregroundstyle=\ssb, foregroundcolor=, align=flushright, width=broad]
+     {\getvariable{document}{author}
+        \doifsomething{\getvariable{document}{email}}
+            {\space$\langle$\from[author-email]$\rangle$}}}
+     \blank[2*big]
+     % Setup document information:
+     \setupinteraction
+        [title={\getvariable{document}{title}},
+         author={\getvariable{document}{author}},
+         keywords={ConTeXt, template, MacTeX}]
+\stopsetups
+
+\setvariables
+    [document]
+    [title=,
+     author=,
+     email=,
+     set=\setups{setup:document}]
+
+% Set itemize
+\setupitemize
+	[inbetween={},
+	 style=bold,
+     margin=1em,
+     itemalign=flushright,
+     distance=0.5em,
+     indentnext=auto,
+    ]
+
+% set inter-paragraph spacing
+\setupwhitespace
+	[medium]
+
+% set indenting. Don't indent the first paragraph
+\setupindenting
+	[medium, next, yes]
+
+\starttext
+
+\setvariables
+  [document]
+  [title={Hello, \MACTEX\ User!},
+   author={Richard Koch},
+   email={koch@math.uoregon.edu}]
+
+Hello, \CONTEXT\ user. This simple document illustrates the basic features of
+\CONTEXT. A lot more information is available at \from[wiki]; click the colored
+link to go to the wiki. More information about \MACTEX\ is available on the
+homepage of \from[mactex]: \url[mactex].
+
+\subject{Itemized lists}
+
+It is easy to create itemized lists in ConTeXt. Lists may be unordered
+
+\startitemize
+  \item First bullet
+  \item Second bullet
+  \item Third bullet
+\stopitemize
+or ordered
+\startitemize[n] 
+  \item first
+  \item second
+  \item third
+\stopitemize
+
+You can change the type of numbering used in ordered lists, as well as change
+the spacing between list items
+\startitemize[a,packed][left=(, right=), stopper=]
+  \item first
+  \item second
+  \item third
+\stopitemize
+
+\subject{Math}
+
+An equation can be typeset inline like $e^{\pi i}+1=0$, or as a displayed
+formula:
+\startformula
+  \int_0^\infty t^4 e^{-t}\,dt = 24.
+\stopformula
+% don't use $$...$$ (the plain TeX equivalent)
+You can also have numbered equations:
+\placeformula[eq:factorial-example]\startformula
+  \int_0^\infty t^5 e^{-t}\,dt = 120.
+\stopformula
+And you can refer to them by name. I called the previous equation {\tt
+factorial-example}, and it is equation \in[eq:factorial-example].
+\ConTeXt\ figures out the number for you.  And with interaction turned
+on, you can click on the equation number to get to the equation.
+
+\subject{Text with figures}
+
+Now text with a few figures.  The first figure goes on the right, with
+the paragraph flowing around it.
+
+\placefigure[right,none]{}{\externalfigure[mactex][width=2.5cm]}
+
+\input bryson
+
+The next figure will go inline, like a displayed formula:
+\placefigure[here]{\MACTEX\ logo}{\externalfigure[mactex]}
+\input thuan
+
+Here's another reference to the numbered equation -- equation
+\in[eq:factorial-example] on \at{page}[eq:factorial-example], so that
+you can test clicking on it or on the page reference.
+
+% most plain TeX commands work
+\vfill
+
+\noindentation
+\framed[corner=round, width=\textwidth,height=1in,
+backgroundcolor=gray,background=color]
+{This document is in the public domain, so that you can improve it, share
+it, and otherwise do what you want with it.  
+Suggestions are welcome.  You can send them to me
+at \from[sanjoy] (Sanjoy Mahajan).}
+
+\noindent 
+\stoptext

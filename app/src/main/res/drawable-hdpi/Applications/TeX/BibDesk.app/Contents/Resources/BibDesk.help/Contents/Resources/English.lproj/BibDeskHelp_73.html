@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.8.3 Adding Custom Column Header Images and Titles</title>
+
+<meta name="description" content="How to use custom images and titles in the table column headers.">
+<meta name="keywords" content="BibDesk Help: 11.8.3 Adding Custom Column Header Images and Titles">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Adding-Custom-Column-Header-Images-and-Titles"></a>
+<a name="SEC136"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Adding Custom Column Header Images and Titles</h3>
+
+<a name=""></a><META name="keywords" content="column headers"><a name=""></a><META name="keywords" content="custom header images"><a name=""></a><META name="keywords" content="custom header titles">
+<p>By default, the main table shows the name of the field in the headers of the column, 
+and for the <samp>`Local-Url'</samp> and <samp>`Url'</samp> fields it shows a small file icon and a 
+<samp>`@'</samp> symbol respecitively. Sometimes you might want more columns to show images 
+in the header to identify the column, for example if you have added custom 
+Local File or Remote URL fields in the <a href="BibDeskHelp_71.html#SEC134">Custom Types and Fields</a>. 
+</p>
+
+<p>You can add your own custom image to use in the table column header. Let's say you have added 
+a custom Remote URL field called <samp>`Citeseerurl'</samp>, and you want the header for the 
+corresponding column to show an image which you have put at the location 
+<samp>`/Users/YourName/Library/Application Support/BibDesk/CiteSeer.png'</samp>. For Bibdesk to use this image, 
+quit BibDesk and enter the following command in Terminal (exclude the outer double quotes): 
+"<code>defaults write -app BibDesk BDSKTableHeaderImages -dict-add 
+Citeseerurl "/Users/YourName/Library/Application Support/BibDesk/CiteSeer.png"</code>"
+then hit return. You can add as many field name/image path pairs as you like 
+inside the braces. 
+</p>
+<p>Similarly, you can also replace the default field name by a title of your own choice, 
+such as the <samp>`@'</samp> symbol for the <samp>`Url'</samp> field. For this, follow the same procedure 
+as for images, but use the key BDSKTableHeaderTitles instead, and write the title to appear in the 
+header instead of the image path. 
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

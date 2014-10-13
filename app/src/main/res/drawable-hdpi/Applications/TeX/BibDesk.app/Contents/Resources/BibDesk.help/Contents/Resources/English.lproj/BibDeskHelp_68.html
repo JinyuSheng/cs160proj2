@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.6.1 Custom Character Conversions</title>
+
+<meta name="description" content="Configuring Custom Character Conversions">
+<meta name="keywords" content="BibDesk Help: 11.6.1 Custom Character Conversions">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Custom-Character-Conversions"></a>
+<a name="SEC129"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Custom Character Conversions</h3>
+
+<a name=""></a><META name="keywords" content="character conversion">
+<p>The Character Conversions Editor allows you to add characters to be converted 
+between TeX and Unicode. See <a href="BibDeskHelp_90.html#SEC156">Character Conversion</a> for more details. 
+</p>
+<p>You can open the Character Conversions Editor by choosing the 
+"Custom character conversions" button in the <a href="BibDeskHelp_67.html#SEC127">Files Preferences</a>. 
+</p>
+<p><img src="gfx/characterConversion.png" alt="gfx/characterConversion">
+</p>
+<p>BibDesk uses two sets of character conversions between TeX and Unicode. 
+Conversions can occur in both directions, or they can occur only from 
+Unicode to TeX. With the "One-Way/Two-Way Conversions" popup you 
+can choose the type of conversions to edit. 
+</p>
+<p>The left column displays Unicode characters that BibDesk should convert to 
+TeX. These can only be <em>single</em> Unicode characters. 
+</p>
+<p>Note that for two-way conversions, the TeX equivalent should <em>always</em> 
+start with <code>{\</code> and end with <code>}</code>. Therefore, the editor does not 
+allow you to edit these characters when you are editing a two-way conversion. 
+</p>
+<p>You can add a new character conversion by choosing the "+" button. 
+Choosing the "-" button will remove the currently selected items. 
+</p>
+<p>When you are done editing, you should choose the "OK" button 
+to save your edits. If you choose the "Cancel" button, 
+your changes will be lost. 
+</p>
+<a name="SEC130"></a>
+<h3 class="subheading"> Notes</h3>
+
+<ul class="toc">
+<li> If you want to convert a Unicode character to TeX that is not surrounded by 
+<code>{\</code> and <code>}</code>, you can only add it as a one-way conversion.
+
+</li><li> A new conversion must first be made valid, before you can edit another entry. 
+Note that duplicate characters are not allowed. In particular, you are not allowed 
+to overwrite character conversions that BibDesk has defined internally. 
+
+</li><li> If you simply close the editor window, without choosing the "OK" or 
+"Cancel" button, your changes will <em>not</em> be saved, even though 
+they will show up on a subsequent edit. 
+</li></ul>
+
+
+<p>
+
+</p>
+</body>
+</html>

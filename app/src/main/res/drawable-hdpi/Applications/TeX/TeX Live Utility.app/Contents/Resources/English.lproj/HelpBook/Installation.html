@@ -1,0 +1,52 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Installation</title>
+		
+		
+		<meta name="description" content="">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+            <div class="Destination">
+            
+<a name="installation"></a>
+        <h2>Installation</h2>
+                        <div class="item "><span class="">One might reasonbly think that installation of TeX Live should be the first item presented in the manual.  After all, TeX Live Utility is mostly uselesss until TeX Live is installed!  However, TeX Live Utility's installation feature is actually hidden, since most users should install via <a href="http://www.tug.org/mactex">MacTeX</a>.  This feature is primarily intended for users who do not have administrative (root) access to their systems, so cannot install MacTeX.</span>                        </div>
+
+                        <div class="item "><span class="">Limitations</span>                            <div class="item "><span class="">1.  Configuration options are somewhat arcane.</span>                            </div>
+                            <div class="item "><span class="">2.  You need a network connection for the duration of the installation (unless you install from a file: URL-based repository).</span>                            </div>
+                            <div class="item "><span class="">3.  Most importantly, the TeX Distribution Preference Pane is not installed, and the <span class="Verbatim">/usr/texbin</span> symbolic link is not created.  This means that you will need to manually adjust path settings in your TeX-using programs.</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class="">If you are convinced that you need this feature, you need to activate it in Terminal.  Quit TeX Live Utility, then execute the following command in Terminal: `<span class="Verbatim">defaults write com.googlecode.mactlmgr.tlu TLMEnableNetInstall 1`</span>.  When you relaunch TeX Live Utility, you will have a third tab in the main window, and a new <span class="UI">Install TeX Live</span> item in the <span class="UI">Actions</span> menu.</span>                        </div>
+
+                        <div class="item "><span class=""><img src="HelpImages/InstallTab.png" class="inline-image"></span>                        </div>
+
+                        <div class="item "><span class="">The primary value of interest for most users is <span class="Verbatim">TEXDIR</span>, which is the destination for installing TeX Live.  Change it to any location on the system for which you have write permission.  TeX Live Utility does not validate any of the variables here, so you're at the mercy of the TeX Live installer script (which works very well indeed).</span>                        </div>
+
+                        <div class="item Box">                            <div class="item "><span class="">This is a fairly trivial GUI wrapper around the default UNIX® install script for TeX Live.  If you use a network repository (i.e., ftp: or http: URL), all of the content will be downloaded over the course of the install process.  For more details, see <a href="http://www.tug.org/texlive/quickinstall.html">www.tug.org—quickinstall.html</a>.</span>                            </div>
+                            <div class="item "><span class="">The primary advantage of using TeX Live Utility versus running the interactive script in Terminal is that TeX Live Utility defaults to the environment variables from MacTeX, so your installation will use <span class="Verbatim">~/Library/texmf </span>as your <span class="Verbatim">TEXMFHOME</span> (place where you install custom packages).  This convention dates back to Gerben Wierda's <a href="http://www.tug.org/twg/mactex/award/2007/gerben/aboutgwtex.html">gwTeX</a>, and is consistent with the extant documentation on TeX for Mac OS X.</span>                            </div>
+                        </div>
+
+
+            </div>
+            
+
+            <div class="bottom-nav">
+            
+
+                    <span class="left-nav"><a href="Preferences.html">← Preferences</a></span>
+                
+
+                    <span class="right-nav"><a href="BetaTesting.html">Beta Testing →</a></span>
+                
+
+                &nbsp;<br/>&nbsp;
+            </div>
+            
+
+    </body>
+</html>

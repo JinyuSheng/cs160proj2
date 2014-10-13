@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 4.2 Advanced Search Options</title>
+
+<meta name="description" content="BibDesk Help: 4.2 Advanced Search Options">
+<meta name="keywords" content="BibDesk Help: 4.2 Advanced Search Options">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Advanced-Search-Options"></a>
+<a name="SEC34"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Advanced Search Options</h2>
+
+<a name=""></a><META name="keywords" content="boolean search"><a name=""></a><META name="keywords" content="diacritic accents in search">
+<p>Apple's Search Kit supports multiple query types within a single search. For example, the following query includes Boolean, prefix, and suffix searching:
+</p>
+<p><samp>`appl* OR *ing'</samp>
+</p>
+<p>This query will return documents containing words that begin with "appl" as well as documents that contain words that end with "ing".  Note that BibDesk does not support phrase searching, since index creation is slower with that option.
+</p>
+<p>The recognized query operators are:
+</p>
+<table>
+<thead><tr><th><p> Operator </p></th><th><p> Meaning
+</p></th></tr></thead>
+<tr><td><p> AND 
+</p></td><td><p> Boolean AND
+</p></td></tr>
+<tr><td><p> &amp; 
+</p></td><td><p> Boolean AND
+</p></td></tr>
+<tr><td><p> &lt;space&gt; 
+</p></td><td><p> Boolean AND by default when no other operator is present
+</p></td></tr>
+<tr><td><p> OR 
+</p></td><td><p> Boolean inclusive OR
+</p></td></tr>
+<tr><td><p> | 
+</p></td><td><p> Boolean inclusive OR
+</p></td></tr>
+<tr><td><p> NO 
+</p></td><td><p> Boolean NOT
+</p></td></tr>
+<tr><td><p> ! 
+</p></td><td><p> Boolean NOT
+</p></td></tr>
+<tr><td><p> * 
+</p></td><td><p> Wildcard for prefix or suffix; surround term with wildcard characters for substring search (default in BibDesk)
+</p></td></tr>
+<tr><td><p> (
+</p></td><td><p> Begin logical grouping
+</p></td></tr>
+<tr><td><p> )
+</p></td><td><p> End logical grouping
+</p></td></tr>
+</table>
+
+<p>The operators AND, OR, and NOT are case sensitive, but Search Kit normalizes query strings and indexes by stripping diacritical marks and by forcing characters to lowercase. For example, Search Kit normalizes each of the following characters to `a': `a', `à', `A', and `À'. For more information, see <a href="http://developer.apple.com/mac/library/documentation/UserExperience/Reference/SearchKit/Reference/reference.html">SKSearchCreate developer documentation</a>.
+</p>
+<p>
+
+</p>
+</body>
+</html>

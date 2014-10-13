@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: G. Template Tags</title>
+
+<meta name="description" content="Discussion of keys used in export templates.">
+<meta name="keywords" content="BibDesk Help: G. Template Tags">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Template-Tags"></a>
+<a name="SEC166"></a>
+<h1 class="appendix"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Template Tags</h1>
+
+<a name=""></a><META name="keywords" content="template"><a name=""></a><META name="keywords" content="export template"><a name=""></a><META name="keywords" content="template tags"><a name=""></a><META name="keywords" content="key value coding">
+<a name="SEC167"></a>
+<h2 class="heading"> Key Value Coding</h2>
+
+<p>BibDesk's templates are based on Key Value Coding, which is an intuitive way to describe properties of objects. 
+We will not attempt to give a full explanation of this concept. We only give some general hints that will be 
+useful for writing templates for BibDesk export and services. For more information, see Apple's 
+<a href="http://developer.apple.com/documentation/Cocoa/Conceptual/KeyValueCoding/index.html">Key Value Coding Guide</a>. 
+</p>
+<a name="SEC168"></a>
+<h3 class="subheading"> Keys and Values</h3>
+
+<p>A key is simply a name for a property of an object. Keys usually contain just letters.
+</p>
+<a name="SEC169"></a>
+<h3 class="subheading"> Key paths</h3>
+
+<p>Properties of objects can have properties themselves. You can find the property using a <em>key path</em>. 
+A key path is simply several keys joined together by dots. For example the following key path describes 
+the property named <code>propertyKey</code> of a property named <code>valueKey</code> of some object. 
+</p><table><tr><td>&nbsp;</td><td><pre>valueKey.propertyKey
+</pre></td></tr></table>
+<a name="SEC170"></a>
+<h3 class="subheading"> Collection keys</h3>
+
+<p>A property can sometimes describe a collection of objects. For example the key <code>publications</code> describes 
+the collection of publication objects of a document. These <em>collection keys</em> are handled slightly 
+different from keys describing single values, both in key value coding and in BibDesk templates. 
+</p>
+<a name="SEC171"></a>
+<h3 class="subheading"> Key paths for collections</h3>
+
+<p>The main difference for key value coding with collection keys is the meaning of key paths. 
+For collections, the value behind the dot is the name of a property of the <em>items</em> in the collection, 
+not of the collection itself. For example if <code>collectionKey</code> describes some collection property and 
+<code>valueKey</code> is the name of a property of the <em>items</em> in the collection, then the key path <code>collection.valueKey</code> 
+will describe another collection, which is made from all the properties named <code>valueKey</code> of the original items. 
+For example, the key path <code>publications.title</code> will give the collection of all the <em>titles</em> of the publications. 
+</p>
+<p>When you want to get a property of the <em>collection</em> rather than the items, you need to insert an 
+<code>@</code> at the beginning of the key. A collection can have two types of properties. 
+</p>
+<p>The first type of property for a collection is a property that modifies the whole collection, returning a new collection. 
+For example take a collection of all the fields of some publication. Then you can modify this collection by 
+removing all the fields that have not been set. The key for this property is <code>@nonEmpty</code>. So the full key path 
+for all the non-empty fields would then be <code>allFields.@nonEmpty</code>, which you can then use in a collection template tag. 
+We call them <em>collection modifier keys</em>.
+</p>
+<p>Another type of a property for a collection is one that does not return another collection, but rather 
+a single value property associated to the collection. For example, the key path <code>collectionKey.@count</code> 
+will give the number of items in the collection. We call those keys <em>collection value keys</em>.
+</p>
+
+<a name="SEC172"></a>
+<h2 class="heading"> Use of template tags</h2>
+
+<p>Key value coding is used in templates for BibDesk's templated export feature. An export template can contain 
+certain special <em>template tags</em>, which are similar to HTML tags, and are named by a key path. 
+The main idea of the templating feature is that the tags are replaced by the value of the 
+property described by the key path. 
+There are three types of template tags: <em>value tags</em>, <em>collection tags</em> and <em>condition tags</em>. 
+</p>
+<a name="SEC173"></a>
+<h3 class="subheading"> Value tags</h3>
+
+<p>The simplest tags are <em>value tags</em>. They simply describe a single property value, 
+like the string value. The tags have the form
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$valueKey/&gt;
+</pre></td></tr></table>
+<p>Or you can use a key path. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$valueKey.modifierKey/&gt;
+</pre></td></tr></table><p>You can often think of the extra components of the key path after the dot as <em>modifiers</em> of the properties. 
+For example assume that the property describes a string value. Then you could use a modifier key  
+<code>capitalizedString</code> that simply capitalizes the string value. For example for a publication, you could use the 
+template tag <code>&lt;$title.capitalizedString/&gt;</code>, which is replaced by the title of the publication written 
+in capital letters. 
+</p>
+<a name="SEC174"></a>
+<h3 class="subheading"> Collection tags</h3>
+
+<p>A more advanced template tag is used to enumerate collection properties. 
+For example, in an export template, you might want to write out some properties for the collection of all publications. 
+Collection tags consist of two tags, a start tag and an end tag. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$collectionKey&gt;
+item template
+&lt;/$collectionKey&gt;
+</pre></td></tr></table><p>The <code>item template</code> that is written between the start and end tag is used as a template that is passed 
+to the items of the collection. Keys in template tags appearing in the <code>item template</code> will be interpreted 
+as names of properties of those items. 
+</p>
+<p>You can also include a template that is used as a separator between items, which will be ignored after the last item of the collection. 
+For this you need to insert a third template tag between the start and end template tags as follows. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$collectionKey&gt;
+item template
+&lt;?$collectionKey&gt;
+separator template
+&lt;/$collectionKey&gt;
+</pre></td></tr></table>
+<p>If a collection template tag appears by itself on a further empty line, this whole line will 
+be ignored (but of course not the tag itself), including the newline at the end of the line. 
+</p>
+<p>As we noted earlier, key paths for collection properties modify the <em>items</em> of the collection. 
+As they return a collection, we can use them again for a collection tag, as in the following example. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$collectionKey.valueKey&gt;
+item template
+&lt;/$collectionKey.valueKey&gt;
+</pre></td></tr></table><p>This gives an enumeration over the values given by <code>valueKey</code> of the items in the collection. 
+</p>
+<p>You can also use <em>collection modifier keys</em> to modify the collection. As these still give a 
+collection, they should be used in collection tags, as in the example below. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$collectionKey.@modifierKey&gt;
+item template
+&lt;/$collectionKey.@modifierKey&gt;
+</pre></td></tr></table> 
+<p>Or you can use <em>collection value keys</em>. As these returns a single value, it should be used in a 
+<em>value template tag</em>, something like the following. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$collectionKey.@collectionValueKey/&gt;
+</pre></td></tr></table>
+<a name="SEC175"></a>
+<h3 class="subheading"> Condition tags</h3>
+
+<p>Another template tag is used to include part of a template depending on whether a value is empty or not. 
+For example, you might want to write out some property, and perhaps some more text around it, only when it is set. 
+Condition tags consist of two tags, just as collection tags, but the key should be a value key.
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$conditionKey?&gt;
+template for non empty condition
+&lt;/$conditionKey?&gt;
+</pre></td></tr></table>
+<p>You can also supply a template when the value for the conditionKey is empty.
+For this you need to insert a third template tag between the start and end template tags as follows. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$conditionKey?&gt;
+template for non empty condition
+&lt;?$conditionKey?&gt;
+template for empty condition
+&lt;/$conditionKey?&gt;
+</pre></td></tr></table>
+<p>Instead of checking for an empty value, you can also check for fixed values. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$conditionKey=firstValue?&gt;
+template for match to firstValue
+&lt;?$conditionKey=secondValue?&gt;
+template for match to secondValue
+...
+&lt;?$conditionKey?&gt;
+template for no match
+&lt;/$conditionKey?&gt;
+</pre></td></tr></table>
+<p>Or you can match on substrings.
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$conditionKey~matchValue?&gt;
+template for substring match
+&lt;/$conditionKey?&gt;
+</pre></td></tr></table>
+<p>In these conditions the alternate template tags (starting with <code>&lt;?$</code>) are optional. 
+There can be an arbitrary number of alternate matches. Matches are case insensitive.
+</p>
+<p>Apart from <code>=</code> and <code>~</code>, also <code>&lt;</code> and <code>&lt;=</code> are available as comparison operators. 
+All alternate tags must have the same comparison operator as the initial tag.
+</p>
+<p>As for collection template tags, if a condition template tag appears by itself on a further empty line, 
+this whole line will be ignored, including the newline at the end of the line. Moreover you can use 
+key paths as well, as long as the combined key path returns a value key.
+</p>
+<a name="SEC176"></a>
+<h3 class="subheading"> Properties of <em>which</em> object?</h3>
+
+<p>We talked all the time about properties of objects. You can ask the question: of <em>which</em> object are we taking a property? 
+This depends on the context for our template. BibDesk can have two types of templates: 
+the Main Page template file, and an Item template file. In the Main Page template file, the keys should describe 
+properties of the <em>document</em>. For example the <code>fileName</code> of the document. In an Item template file, 
+the keys describe properties of <em>publication</em> objects. For example the <code>title</code> of the publications. 
+</p>
+<p>However in between <em>collection tags</em>, the keys describe properties of the <em>items</em> in the collection. 
+For example, the following could appear in the Main Page template, as <code>publications</code> is the key for a collection 
+property of a document. 
+</p><table><tr><td>&nbsp;</td><td><pre>&lt;$publications&gt;
+    &lt;$title/&gt;
+&lt;/$publications&gt;
+</pre></td></tr></table><p>This simple template will write out all the titles of the publications in the document. 
+</p>
+<p>For BibDesk there are essentially five types of objects. The top level <em>document</em>, 
+a <em>publication</em> item, a <em>field</em> of a publication, an <em>author</em> of a publication, 
+and a <em>macro</em>. 
+</p>
+
+<a name="SEC177"></a>
+<h3 class="subheading"> Counters</h3>
+
+<p>In the item template inside a collection tag you can use the special key "#" to get a counter for the items. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre>    &lt;$#/&gt;
+</pre></td></tr></table>
+<p>You can modify the counter with value modifier keys for a number. 
+</p>
+
+<a name="SEC178"></a>
+<h2 class="heading"> Template Keys</h2>
+
+<table border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="BibDeskHelp_94.html#SEC179">Template Keys</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<p>
+
+</p>
+</body>
+</html>

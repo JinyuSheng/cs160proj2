@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FlickrTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_toq">ToqActivity</string>
+    <string name="error_initialising_icons">Can\'t initialize icons</string>
+    <string name="error_initialising_card_images">Can\'t initialize card images</string>
+    <string name="error_uninstalling_deck_of_cards">Can\'t uninstall deck of cards</string>
+    <string name="already_uninstalled">App is already uninstalled</string>
+
+</resources>

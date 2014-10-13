@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 5.9 Identifying Duplicate References</title>
+
+<meta name="description" content="How to identify duplicate references in a database.">
+<meta name="keywords" content="BibDesk Help: 5.9 Identifying Duplicate References">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Identifying-Duplicate-References"></a>
+<a name="SEC71"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Identifying Duplicate References</h2>
+
+<a name=""></a><META name="keywords" content="duplicate references"><a name=""></a><META name="keywords" content="finding duplicates">
+<a name="SEC72"></a>
+<h3 class="subheading"> Selecting Duplicates</h3>
+
+<p>To identify duplicate references in your database, use the "Select Duplicates" item
+of the "Database" menu.  BibDesk compares the type and all standard fields for that type,
+and selects all publications for which a duplicate with the same values for those type and fields
+can be found.  You can choose whether you want to select all the duplicates, or to leave out
+one duplicate for each set (the "original", which will be chosen at random).
+</p>  
+<p>Crossref and type are compared case-insensitively, while other
+fields are compared case-sensitively without removing any TeX-specific commands.
+</p>
+<p>For duplicates in the main database, also the cite key and default fields are included for comparison.
+For duplicates in external groups, those are ignored. 
+</p>
+<p>For a less rigorous comparison, choose "Select Duplicates by &lt;Field&gt;" from the "Database" menu.  
+With this option, similar to the functionality of BibTool, BibDesk compares adjacent values in the currently 
+sorted column of the main publications list; if it finds an item whose value is identical in the succeeding cell, it selects
+both items.  For instance, if you sort by first author and use "Select Duplicates by First Author"
+and have four publications with the same first author, all of the four publications by that
+author will be selected.  Obviously, author may not be the best choice in this case if you are
+searching for duplicate publications!
+</p>
+<a name="SEC73"></a>
+<h3 class="subheading"> Reviewing Duplicates</h3>
+
+<p>The number of duplicates found will be visible in the status line at the bottom of the window.
+<em>These are not necessarily identical items, however, so manual review is necessary.</em>
+For easy review, choose "New Group With Selection" from the "File" menu,
+which will create a group named "Untitled" with the selected publications (this uses the
+current group field).
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

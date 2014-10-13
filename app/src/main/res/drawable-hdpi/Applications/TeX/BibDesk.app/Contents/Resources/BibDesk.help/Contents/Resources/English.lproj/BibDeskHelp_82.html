@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 12.3.1 Script Hook Sample 1</title>
+
+<meta name="description" content="An example script hook">
+<meta name="keywords" content="BibDesk Help: 12.3.1 Script Hook Sample 1">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Script-Hook-Sample-1"></a>
+<a name="SEC146"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Script Hook Sample 1</h3>
+
+<a name=""></a><META name="keywords" content="script hook sample">
+<p>Here is an example for an AppleScript you can set for a Change Field script hook. 
+It generates the "Url" field from a custom "Aid" field when the value 
+of the "Aid" field is set in the editor. 
+</p>
+<table><tr><td>&nbsp;</td><td><pre><span class="aslangkeyword">property</span> <span class="asvariable">theFieldToSet</span> <span class="asoperator">:</span> <span class="asvalue">"Url"</span>
+<span class="aslangkeyword">property</span> <span class="asvariable">theFormatString</span> <span class="asoperator">:</span> <span class="asvalue">"http://dx.doi.org/%f{Aid}"</span>
+<span class="aslangkeyword">property</span> <span class="asvariable">theRequiredFields</span> <span class="asoperator">:</span> <span class="asvalue">{"Aid"}</span>
+
+<span class="aslangkeyword">using terms from</span> <span class="asclass">application</span> <span class="asvalue">"BibDesk"</span>
+    <span class="aslangkeyword">on</span> <span class="ascommand">perform BibDesk action with publications</span> <span class="asvariable">thePubs</span> <span class="asappkeyword">for script hook</span> <span class="asvariable">theScriptHook</span>
+        <span class="ascomment">-- get some properties from the script hook</span>
+        <span class="aslangkeyword">set</span> <span class="asvariable">theName</span> <span class="aslangkeyword">to the</span> <span class="asproperty">name</span> <span class="aslangkeyword">of</span> <span class="asvariable">theScriptHook</span>
+        <span class="aslangkeyword">set</span> <span class="asvariable">changedField</span> <span class="aslangkeyword">to the</span> <span class="asproperty">field name</span> <span class="aslangkeyword">of</span> <span class="asvariable">theScriptHook</span>
+        <span class="ascomment">-- check if we get the right script hook event</span>
+        <span class="aslangkeyword">if</span> <span class="asvariable">theName</span> <span class="aslangkeyword">is not</span> <span class="asvalue">"Change Field"</span> <span class="aslangkeyword">then return</span>
+        <span class="aslangkeyword">if</span> <span class="asvariable">changedField</span> <span class="aslangkeyword">is not in</span> <span class="asvariable">theRequiredFields</span> <span class="aslangkeyword">then return</span>
+        <span class="aslangkeyword">repeat with</span> <span class="asvariable">aPub</span> <span class="aslangkeyword">in</span> <span class="asvariable">thePubs</span>
+            <span class="aslangkeyword">tell</span> <span class="asvariable">aPub</span>
+                <span class="ascomment">-- check that we can set the field</span>
+                <span class="aslangkeyword">set</span> <span class="asvariable">shouldSet</span> <span class="aslangkeyword">to</span> <span class="asenum">true</span>
+                <span class="aslangkeyword">if</span> <span class="asoperator">(</span><span class="asproperty">value</span> <span class="aslangkeyword">of</span> <span class="asclass">field</span> <span class="asvariable">theFieldToSet</span> <span class="aslangkeyword">is not</span> <span class="asvalue">""</span><span class="asoperator">)</span> <span class="aslangkeyword">then</span>
+                    <span class="aslangkeyword">set</span> <span class="asvariable">shouldSet</span> <span class="aslangkeyword">to</span> <span class="asenum">false</span>
+                <span class="aslangkeyword">else</span>
+                    <span class="aslangkeyword">repeat with</span> <span class="asvariable">aField</span> <span class="aslangkeyword">in</span> <span class="asvariable">theRequiredFields</span>
+                        <span class="aslangkeyword">if</span> <span class="asoperator">(</span><span class="asproperty">value</span> <span class="aslangkeyword">of</span> <span class="asclass">field</span> <span class="asvariable">aField</span> <span class="aslangkeyword">is</span> <span class="asvalue">""</span><span class="asoperator">)</span> <span class="aslangkeyword">then</span>
+                            <span class="aslangkeyword">set</span> <span class="asvariable">shouldSet</span> <span class="aslangkeyword">to</span> <span class="asenum">false</span>
+                        <span class="aslangkeyword">end if</span>
+                    <span class="aslangkeyword">end repeat</span>
+                <span class="aslangkeyword">end if</span>
+                <span class="aslangkeyword">if</span> <span class="asvariable">shouldSet</span> <span class="aslangkeyword">then</span>
+                    <span class="ascomment">-- generate a new value for the field</span>
+                    <span class="aslangkeyword">set</span> <span class="asvariable">theField</span> <span class="aslangkeyword">to</span> <span class="asclass">field</span> <span class="asvariable">theFieldToSet</span>
+                    <span class="aslangkeyword">set</span> <span class="asvariable">newValue</span> <span class="aslangkeyword">to</span> <span class="ascommand">parse format</span> <span class="asvariable">theFormatString</span> <span class="asappkeyword">for</span> <span class="asvariable">theField</span>
+                    <span class="aslangkeyword">if</span> <span class="asvariable">newValue</span> <span class="aslangkeyword">is not</span> <span class="asvalue">""</span> <span class="aslangkeyword">then</span>
+                        <span class="aslangkeyword">set</span> <span class="asproperty">value</span> <span class="aslangkeyword">of</span> <span class="asvariable">theField</span> <span class="aslangkeyword">to</span> <span class="asvariable">newValue</span>
+                    <span class="aslangkeyword">end if</span>
+                <span class="aslangkeyword">end if</span>
+            <span class="aslangkeyword">end tell</span>
+        <span class="aslangkeyword">end repeat</span>
+    <span class="aslangkeyword">end</span> <span class="ascommand">perform BibDesk action with publications</span>
+<span class="aslangkeyword">end using terms from</span>
+</pre></td></tr></table>
+<p>The main thing that should be done in the script is to define a 
+<samp>`perform BibDesk action with publications'</samp> subroutine to handle the script hook. 
+An important thing to note is that you should bracket the whole subroutine in 
+<samp>`using terms from application "BibDesk"'</samp>, so that certain AppleScript 
+definitions (such as the subroutine name) are recognized. 
+</p>
+<p>For another sample script, look in the <a href="BibDeskHelp_80.html#SEC144">Scripts Menu</a> of BibDesk. To view its source, 
+select the "Sample Script Hook" menu item with the Option key held down. 
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

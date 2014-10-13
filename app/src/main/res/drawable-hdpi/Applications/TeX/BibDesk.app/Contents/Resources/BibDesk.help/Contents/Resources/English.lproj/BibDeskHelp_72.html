@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.8.2 Editing Global Macro Definitions</title>
+
+<meta name="description" content="How to edit BibDesk's global macro definitions.">
+<meta name="keywords" content="BibDesk Help: 11.8.2 Editing Global Macro Definitions">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Editing-Global-Macro-Definitions"></a>
+<a name="SEC135"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Editing Global Macro Definitions</h3>
+
+<a name=""></a><META name="keywords" content="macros"><a name=""></a><META name="keywords" content="global macros"><a name=""></a><META name="keywords" content="copy and paste"><a name=""></a><META name="keywords" content="drag and drop">
+<p>BibDesk can maintain a separate store of macro definitions which are not
+associated with a particular document.  Many users store their <samp>`@string'</samp>
+definitions in a separate file, or perhaps maintain abbreviated and full versions
+of the definitions.  Unfortunately, BibDesk doesn't know about the relationships
+between these files, so the macros are only shown in their abbreviated form 
+unless they are added to the global macro definitions.
+</p>
+<p>Macro definitions can also be found in bibliography style files (<samp>`.bst'</samp>
+extension), such as this example from <samp>`apalike.bst'</samp>:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>MACRO {ibmjrd} {"IBM Journal of Research and Development"}
+</pre></td></tr></table>
+<p>These definitions, along with <samp>`@string'</samp> definitions, can be copied and pasted
+or dragged into the global macro editor window.  In fact, you can paste the entire
+contents of a <samp>`.bst'</samp> or <samp>`.bib'</samp> file into the window, and it will extract
+the relevant parts for you!
+</p>
+<p>If you want to add these definitions to a file, you can copy and paste or drag and
+drop them into a document's macro editor as well (see <a href="BibDeskHelp_24.html#SEC55">Editing a Document's Macro Definitions</a>
+for more details).  A document's definitions will always override the global definitions,
+in case of a conflict.
+</p>
+<p>You can also add a collection of files from which global macro definitions will be 
+read on startup. You will not see those macros in the macro editor, 
+but they will be used when no other macro definition is found in the document or the global macros. 
+You can add are either bibliography files (<samp>`.bib'</samp> extension) or bibliography style 
+files (<samp>`.bst'</samp> extension). To add files from which global macros are read, click the 
+"Files<small>...</small>" button in the Defaults preference pane.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

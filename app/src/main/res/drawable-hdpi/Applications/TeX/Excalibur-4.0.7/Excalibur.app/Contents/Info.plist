@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>tex</string>
+				<string>TEX</string>
+				<string>ltx</string>
+				<string>LTX</string>
+				<string>sty</string>
+				<string>cls</string>
+				<string>bib</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>tex</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>txt</string>
+				<string>text</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>text/plain</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Text File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Text File</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>TEXT</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>131</string>
+			<key>CFBundleTypeName</key>
+			<string>Excalibur Preferences</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>XCLp</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>ExcaliburDICT.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Excalibur Dictionary</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>XCLD</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>ExcaliburDEFS.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Excalibur Commands</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>XCLC</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Excalibur</string>
+	<key>CFBundleGetInfoString</key>
+	<string>4.0.7</string>
+	<key>CFBundleIconFile</key>
+	<string>Excalibur.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>edu.bucknell.Excalibur</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Excalibur</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>4.0.7</string>
+	<key>CFBundleSignature</key>
+	<string>XCLB</string>
+	<key>CFBundleVersion</key>
+	<string>4.0.7</string>
+</dict>
+</plist>

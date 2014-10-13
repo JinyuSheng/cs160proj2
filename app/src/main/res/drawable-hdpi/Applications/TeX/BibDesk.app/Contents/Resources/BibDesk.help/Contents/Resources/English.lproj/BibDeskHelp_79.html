@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 12.1 Automating Tasks with AppleScript</title>
+
+<meta name="description" content="How to automate tasks using AppleScript with BibDesk.">
+<meta name="keywords" content="BibDesk Help: 12.1 Automating Tasks with AppleScript">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Automating-Tasks-with-AppleScript"></a>
+<a name="SEC143"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Automating Tasks with AppleScript</h2>
+
+<a name=""></a><META name="keywords" content="using AppleScript"><a name=""></a><META name="keywords" content="automating tasks">
+<p>You can use <a href="http://www.apple.com/applescript">AppleScript</a> to write small programs, 
+or scripts, to automate common tasks in BibDesk. For example, you can have a script 
+process all the titles of your references, cleaning them up or capitalizing them. 
+Or you can use a script to download bibliography information for references from the web. 
+Scripts can be made accessible from the <a href="BibDeskHelp_80.html#SEC144">Scripts Menu</a>.
+</p>
+<p>Here is an example of an AppleScript to process the titles of all selected references. 
+(The definition of the subroutine to actually do the processing is not shown).
+</p>
+<table><tr><td>&nbsp;</td><td><pre><span class="aslangkeyword">tell</span> <span class="asclass">application</span> <span class="asvalue">"BibDesk"</span>
+    <span class="aslangkeyword">set</span> <span class="asvariable">theSelection</span> <span class="aslangkeyword">to the</span> <span class="asproperty">selection</span> <span class="aslangkeyword">of</span> <span class="asclass">document</span> <span class="asvalue">1</span>
+    <span class="aslangkeyword">repeat with</span> <span class="asvariable">thePub</span> <span class="aslangkeyword">in</span> <span class="asvariable">theSelection</span>
+        <span class="ascomment">-- accessing field values</span>
+        <span class="aslangkeyword">set</span> <span class="asvariable">theTitle</span> <span class="aslangkeyword">to the</span> <span class="asproperty">value</span> <span class="aslangkeyword">of</span> <span class="asclass">field</span> <span class="asvalue">"Title"</span> <span class="aslangkeyword">of</span> <span class="asvariable">thePub</span>
+        <span class="ascomment">-- processString is a subroutine defined elsewhere in the script</span>
+        <span class="aslangkeyword">set</span> <span class="asvariable">theTitle</span> <span class="aslangkeyword">to my</span> <span class="asvariable">processString</span><span class="asoperator">(</span><span class="asvariable">theTitle</span><span class="asoperator">)</span>
+        <span class="aslangkeyword">set the</span> <span class="asproperty">value</span> <span class="aslangkeyword">of</span> <span class="asclass">field</span> <span class="asvalue">"Title"</span> <span class="aslangkeyword">of</span> <span class="asvariable">thePub</span> <span class="aslangkeyword">to</span> <span class="asvariable">theTitle</span>
+    <span class="aslangkeyword">end repeat</span>
+<span class="aslangkeyword">end tell</span>
+</pre></td></tr></table>
+<p>A more extensive sample of AppleScript support for BibDesk can be found in the script <samp>`Sample Script.scpt'</samp>. 
+You can view it through the <a href="Scripts Menu">Scripts Menu</a>. 
+</p>
+<p>To see the AppleScript commands you can use with BibDesk, open "Script Editor" 
+(located in <code>Applications/AppleScript</code>). In "Script Editor", choose 
+"File &gt; Open Dictionary" (shortcut &#8679;&#8984;O
+) and select BibDesk in the dialog. 
+You can also drag the BibDesk icon onto the "Script Editor" icon to open the dictionary.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

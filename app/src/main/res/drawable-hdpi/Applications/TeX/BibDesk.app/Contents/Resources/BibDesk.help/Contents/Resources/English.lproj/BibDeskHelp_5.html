@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 3.2 Opening a File</title>
+
+<meta name="description" content="Opening a file.">
+<meta name="keywords" content="BibDesk Help: 3.2 Opening a File">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Opening-a-File"></a>
+<a name="SEC23"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Opening a File</h2>
+
+<a name=""></a><META name="keywords" content="opening a file"><a name=""></a><META name="keywords" content="open using filter"><a name=""></a><META name="keywords" content="<code>Cmd-O</code>"><a name=""></a><META name="keywords" content="<code>Shift-Cmd-O</code>">
+<a name="SEC24"></a>
+<h3 class="subheading"> Opening a File in a Specific Encoding</h3>
+
+<p>Use the "Open<small>...</small>" menu item in the "File" menu, and select the encoding
+you want to use from the popup menu at the bottom of the dialog
+box.
+</p>
+<a name="SEC25"></a>
+<h3 class="subheading"> Opening a File Using a Command-Line Filter</h3>
+
+<p>This feature lets you specify any command line that produces a BibTeX
+file and open it in BibDesk directly. If you have command line
+conversion tools from other formats, this is a handy way to use them.
+For instance, suppose you have a file called <samp>`searchresults.isi'</samp> in the ISI file format from
+an online database.  Using the <a href="http://www.scripps.edu/~cdputnam/software/bibutils/bibutils.html">BibUtils</a>
+suite of command line utilities (available here), you can translate that file into BibTeX with the following
+command: <code>/usr/local/bin/isi2xml | /usr/local/bin/xml2bib</code>, with the paths adjusted appropriately for your
+installation.  
+</p>
+<p><img src="gfx/filterCmd.png" alt="gfx/filterCmd">
+</p>
+<p>The drop-down menu will save the last seven commands used, which should be sufficient for most needs!
+Note that BibDesk can open RIS files directly, so a filter isn't required for them.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

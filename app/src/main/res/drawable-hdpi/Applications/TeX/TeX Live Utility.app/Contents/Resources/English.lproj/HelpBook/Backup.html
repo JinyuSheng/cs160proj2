@@ -1,0 +1,51 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Backup</title>
+		
+		
+		<meta name="description" content="">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+            <div class="Destination">
+            
+        <h2>Backup</h2>
+                        <div class="item "><span class="">TeX Live Manager will automatically save backups for you.  When it updates a package, the previous version of that package is archived, so you can revert to an older version of it easily.</span>                        </div>
+
+                        <div class="item "><span class="">When you need to revert to an older version, click the <span class="UI">Restore</span> button next to its version number and install date.</span>                        </div>
+
+                        <div class="item "><span class=""><img src="HelpImages/BackupTab.png" class="inline-image"></span>                        </div>
+
+                        <div class="item "><span class="">To configure automatic backups, use the <span class="UI">Configure</span> menu.</span>                            <div class="item "><span class=""><img src="HelpImages/AutobackupSheet.png" class="inline-image"></span>                            </div>
+                            <div class="item "><span class="">If the <span class="UI">Autobackup enabled</span> box is checked, the number of previous versions to save (per package) can be set below.  To keep all previous versions, enter ∞ (opt-5 on US keyboards).</span>                            </div>
+                            <div class="item "><span class="">If the <span class="UI">Prune backups</span> box is checked, the number of backups (per package) will be pruned to your maximum value when you dismiss the sheet by choosing <span class="UI">Accept</span>.</span>                            </div>
+                        </div>
+
+                        <div class="item Box">                            <div class="item "><span class="">With a system as complex as TeX Live, fully testing all packages for compatibility is practically impossible.  Additionally, sometimes a package author overlooks a bug before submitting an update to CTAN, and it may take a few days (or longer) to get fixed.  Automatic backups can help you meet deadlines and avoid tedious manual package restoration or fixes.</span>                            </div>
+                            <div class="item "><span class="">Although we recommend that you keep backups enabled, old packages can use significant amounts of disk space on today's smaller SSD drives, so you may wish to limit the number of backups.</span>                            </div>
+                        </div>
+
+                        <div class="item Pro"><span class="">You can find out how much space is being used by TeX Live backups using the following command in Terminal.app:  <span class="Verbatim">du -sk $(kpsewhich -var-value=SELFAUTOPARENT)/$(tlmgr option backupdir |cut -d &quot;:&quot; -f 2 |sed -e 's/^ //g')</span>, which reports size in kilobytes.</span>                        </div>
+
+
+            </div>
+            
+
+            <div class="bottom-nav">
+            
+
+                    <span class="left-nav"><a href="ManagePackages.html">← Manage Packages</a></span>
+                
+
+                    <span class="right-nav"><a href="PackageInfo.html">Package Info →</a></span>
+                
+
+                &nbsp;<br/>&nbsp;
+            </div>
+            
+
+    </body>
+</html>

@@ -1,0 +1,5 @@
+Version 4.0.7, February 09, 2009
+
+This release fixes a bug that could cause Excalibur to hang when there was a syntax error at the end of a file.
+
+Visit the Excalibur home page <http://excalibur.sourceforge.net/> for more information.

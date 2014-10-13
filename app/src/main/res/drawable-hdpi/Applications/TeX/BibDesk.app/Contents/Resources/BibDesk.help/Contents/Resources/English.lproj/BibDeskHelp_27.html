@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 5.5 Browsing References</title>
+
+<meta name="description" content="Browsing references in your database.">
+<meta name="keywords" content="BibDesk Help: 5.5 Browsing References">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Browsing-References"></a>
+<a name="SEC58"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Browsing References</h2>
+
+<p>The references are presented in a table with a detail pane on the
+bottom of the window. You can sort the table by column by clicking on
+the name of each column, in the header of the table.
+</p>
+<p><img src="gfx/tableView.png" alt="gfx/tableView">
+</p>
+<a name="SEC59"></a>
+<h3 class="subheading"> Customizing the Table</h3>
+<a name=""></a><META name="keywords" content="table, customizing"><a name=""></a><META name="keywords" content="customizing"><a name=""></a><META name="keywords" content="displaying custom fields"><a name=""></a><META name="keywords" content="table columns">
+
+<p>You can control the order of the columns by moving them directly.
+</p>
+<p>To add a field that isn't displayed, use the column management
+menu. There are three ways to access this menu; In the menu bar under
+"View &gt; Columns", by Control-clicking on a column name, or by
+clicking the small button at the top right of the table.
+</p>
+<p>It has a menu of fields you can add, or you can choose to add any
+field that isn't listed by typing in the box. You can add a column for
+any field you like, even if that field doesn't exist in any of the
+publications listed.
+</p>
+<p>You can also easily remove a column, by unchecking the columns name in 
+one of the menus mentioned above. 
+</p>
+<p>The Columns usually simply display the content of the relevant field.
+There are a few special columns, where information is displayed that 
+is more informative to the user. Below we discuss some of these special fields. 
+</p>
+<a name="SEC60"></a>
+<h3 class="subheading"> Title</h3>
+<a name=""></a><META name="keywords" content="Title">
+<p>Normally, the Title column will display the content of a Title field, if it exists. 
+For inbook type items, the Title refers to the title of the whole work. 
+Therefore the Chapter field is added to the title displayed in the Title column. 
+If this is empty, the Pages field is used, if available. 
+</p>
+<a name="SEC61"></a>
+<h3 class="subheading"> Authors and Editors</h3>
+<a name=""></a><META name="keywords" content="Authors and Editors">
+<p>You have the option of showing Authors together or separately.  If you simply
+select 'Author' you will get all the authors connected by 'and', if you choose 
+First Author, well, you just get the First Author.
+</p>
+<p>References can have both Authors and Editors.  Most of the time the Authors are of primary
+interest, but some books don't have Authors, just Editors.  If you select one of the Author
+options (eg First Author) and there is only an Editor, then the field will be blank.
+To avoid this choose the equivalent Author or Editor column (eg First Author or Editor),
+and the Editors will only be shown if there are no Authors.
+</p>
+<p>In some academic fields the last author is the head of the lab, and users find it convenient
+to sort their papers by the last author.  This can be done by adding the Last Author [or Editor] field.
+</p>
+<a name="SEC62"></a>
+<h3 class="subheading"> Container</h3>
+<a name=""></a><META name="keywords" content="Container">
+<p>The special column 'Container' can be added to the table.  It is useful for
+types that are part of a larger document and displays the title of that
+'Container' document.  It will display a slightly different field depending
+on the type of the item.
+</p>
+<table>
+<thead><tr><th><p> Type </p></th><th><p> Container Field
+</p></th></tr></thead>
+<tr><td><p> article </p></td><td><p> Journal
+</p></td></tr>
+<tr><td><p> incollection </p></td><td><p> Booktitle
+</p></td></tr>
+<tr><td><p> inproceedings </p></td><td><p> Booktitle
+</p></td></tr>
+<tr><td><p> conference </p></td><td><p> Booktitle
+</p></td></tr>
+<tr><td><p> inbook </p></td><td><p> Title
+</p></td></tr>
+<tr><td><p> book </p></td><td><p> Series 
+</p></td></tr>
+<tr><td><p> commented </p></td><td><p> Volumetitle
+</p></td></tr>
+</table>
+
+<p>If you use a special type that has a container concept write to bibdesk-develop@lists.sourceforge.net
+and it can be added. 
+</p>
+<a name="SEC63"></a>
+<h3 class="subheading"> Local File</h3>
+<a name=""></a><META name="keywords" content="Local File"><a name=""></a><META name="keywords" content="drag and drop, files">
+<p>The Local File column is the column with the column with a paperclip icon in the header. 
+</p>
+<p>The Local File column displays a paperclip icon and the number of attached files when files are attached.
+If one of the linked files could not be found, the paperclip will be displayed in red.
+This way you can easily track missing linked files. 
+</p>
+<p>When a cell in the Local File column is double-clicked, the linked files will be opened 
+using the default application for the corresponding file type. 
+The linked files can also be dragged from the table to the Finder in order to copy it to another location, 
+or it can be dragged into a specific application in the Dock to open the file in a specific application 
+or perhaps mail it as an attachment.
+</p>
+<a name="IDX11"></a><META name="keywords" content="Remote URL"><a name="IDX12"></a><META name="keywords" content="drag and drop, Remote URL"><a name="SEC64"></a>
+<h3 class="subheading"> Remote URL</h3>
+
+<p>The Remote URL column is the column with the column with an @-sign in the header. 
+</p>
+<p>Similarly, the Remote URL column displays a little webloc icon (a file icon with an @-sign) 
+when the one or more URLs are attached to the pubblication. The column then also displays the number of linked URLs. 
+</p>
+<p>Double-clicking a cell in the Remote URL column will open the first linked remote URL 
+in your default browser application.   
+</p>
+<a name="SEC65"></a>
+<h3 class="subheading"> Publication Date</h3>
+<a name=""></a><META name="keywords" content="Publication Date">
+<p>The Publication Date column displays the date of the item, which is constructed from the Year and Month 
+fields of the item.
+</p>
+<a name="SEC66"></a>
+<h3 class="subheading"> Item Number</h3>
+<a name=""></a><META name="keywords" content="Item Number">
+<p>The Item Number column shows a little #-mark in the header. The column displays the 
+order of the item as it appears in the file. 
+</p>
+<a name="SEC67"></a>
+<h3 class="subheading"> BibTeX Type</h3>
+<a name=""></a><META name="keywords" content="BibTeX Type">
+<p>The BibTeX Type column displays the publication type of the item. 
+Be aware that Type is a different BibTeX field, unrelated to the BibTeX Type.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

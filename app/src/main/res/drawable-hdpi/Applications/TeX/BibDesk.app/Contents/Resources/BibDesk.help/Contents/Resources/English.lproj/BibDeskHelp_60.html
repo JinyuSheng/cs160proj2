@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 10.3 Template Editor</title>
+
+<meta name="description" content="How to edit templates used for citations.">
+<meta name="keywords" content="BibDesk Help: 10.3 Template Editor">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Template-Editor"></a>
+<a name="SEC119"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Template Editor</h2>
+
+<a name=""></a><META name="keywords" content="templates, customize, template editor">
+<p>BibDesk has a built-in template editor that allows you to create basic templates, without the need to know the template syntax. 
+It is most suitable for citation and bibliography templates. It may be less suitable for preview and export templates, 
+as it does not support more complex collection and condition tags. To create a new template using the template editor, 
+choose "File &gt; New Template".
+</p>
+<p>The basic work flow to create a new template using the template editor is as follows.
+</p>
+<p>First, choose whether you want a plain text or rich text template. In the latter case, choose a font. 
+</p>
+<p>Then choose a default type. This is either the type of most of your publication items, e.g. <code>article</code>, 
+or a generic type, e.g. <code>misc</code>. The latter could be useful only if you add separate styles for a few types, 
+as described below.
+</p>
+<p>Next edit the prefix, to be added before the items, the suffix, to be added after the items, and the item separator, 
+to be used between the items.
+</p>
+<p>Then you edit the item template or the item templates. You can either add a single template for a single (default) type,
+or you can include different item templates for several publication types in a addition to a default item templates. 
+In the latter case, check the types for whic you want to add special templates in the table. The types for which a required 
+item template has not been set yet are displayed in red. The default template is dislayed in the table using a bold font. 
+Next you select the different types for which you want to add an item template, and edit the template.
+</p>
+<p>You edit an item template by dragging blue bubbles from the available fields to the item template field.
+You can also type text between the bubbles. After you select a bubble, you can change some options for the field.
+The Appending, Prefix, and Suffix options are added only when the value of the field is not empty.
+The Rich Text bubble can be used to add text with font that is different from the rest of the template, 
+or to add text that is conditional on whether a particular field is set, or not set.
+In the font options of the bubbles, any font setting can be inherited from the main body of the template.
+For the font name, simply choose <samp>`Same as body'</samp>, for the font size, choose <samp>`Inherit'</samp> or 0 for this behavior. 
+To inherit the Bold or Italic setting from the main body, choose a <samp>`-'</samp> in the check button.
+</p>
+<p>It may be useful to first change the options for some of the available fields before editing the item templates.
+Options set for the available field bubbles will later be copied to the item templates. Note that editing the 
+options of an available field will not affect the options for bubbles already included in an item template.
+However these options will be shared between different types.
+</p>
+<p>You can copy an item template for one type to another type by dragging a row in the table and dropping it on another row.
+</p>
+<p>At the end you save the template. You could then edit the template in a text editor such as TextEdit for some final touches,
+or to add template tags not supported by the template editor.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

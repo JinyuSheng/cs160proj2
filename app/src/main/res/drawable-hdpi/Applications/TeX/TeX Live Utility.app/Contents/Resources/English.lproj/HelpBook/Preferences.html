@@ -1,0 +1,58 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Preferences</title>
+		
+		
+		<meta name="description" content="">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+            <div class="Destination">
+            
+<a name="preferences"></a>
+        <h2>Preferences</h2>
+                        <div class="item "><span class="">TeX Live Utility has very few preferences, in order to keep things as simple as possible.  However, a few global options can be set in the panel available via the <span class="UI">Preferences</span> item of the main menu:</span>                        </div>
+
+                        <div class="item "><span class=""><img src="HelpImages/Prefs.png" class="inline-image"></span>                        </div>
+
+                        <div class="item "><span class=""><span class="UI">TeX programs</span></span>                            <div class="item "><span class="">This is the path to the <span class="Verbatim">tlmgr</span> command-line tool that TeX Live Utility uses.  If you use MacTeX, the default setting of <span class="Verbatim">/usr/texbin</span> is correct, but other distributions may require you to change this.</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class=""><span class="UI">Automatically enable fonts in my home directory</span></span>                            <div class="item "><span class="">When checked, TeX Live Utility's will run the <span class="Verbatim">updmap</span> command if it finds an <span class="Verbatim">updmap.cfg</span> file in your TeX Live home directory, indicating that you have installed some personal fonts.  If you have not manually installed fonts, as discussed <a href="http://www.tug.org/fonts/fontinstall-personal.html">here</a>, you can leave this unchecked.  Note: this setting only applies to TeX Live 2012 and later.</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class=""><span class="UI">Show progress in system log</span></span>                            <div class="item "><span class="">When checked, TeX Live Utility's log output will be written to the system log.  Now that logs are saved between sessions, this should generally be left unchecked.</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class=""><span class="UI">Add new packages to match the server when updating</span></span>                            <div class="item "><span class="">If packages were added to TeX Live after you installed it, this will bring you up to date.  You should almost never uncheck this box.</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class=""><span class="UI">Remove packages to match the server when updating.</span></span>                            <div class="item "><span class="">Sometimes packages are removed from the server, typically due to licensing problems.  If this box is checked, such packages will be removed from your system when you use the <span class="UI">Update All</span> action.</span>                            </div>
+                            <div class="item "><span class="">This box can generally be unchecked safely, if you're concerned about losing packages.</span>                            </div>
+                        </div>
+
+                        <div class="item Box">                            <div class="item "><span class="">List fonts can be changed by using the standard Font panel from the Edit menu (<span class="UI">Cmd-T</span>).  Font settings will persist between launches.</span>                            </div>
+                        </div>
+
+
+            </div>
+            
+
+            <div class="bottom-nav">
+            
+
+                    <span class="left-nav"><a href="Logging.html">← Logging</a></span>
+                
+
+                    <span class="right-nav"><a href="Installation.html">Installation →</a></span>
+                
+
+                &nbsp;<br/>&nbsp;
+            </div>
+            
+
+    </body>
+</html>

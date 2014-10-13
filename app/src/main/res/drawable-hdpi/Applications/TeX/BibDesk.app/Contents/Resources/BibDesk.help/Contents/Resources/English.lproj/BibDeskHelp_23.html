@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 5.3.2 Editing Fields with Macros</title>
+
+<meta name="description" content="How to edit a field as Raw BibTeX, to add macro references.">
+<meta name="keywords" content="BibDesk Help: 5.3.2 Editing Fields with Macros">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Editing-Fields-with-Macros"></a>
+<a name="SEC54"></a>
+<h3 class="subsection"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Editing Fields with Macros</h3>
+
+<a name=""></a><META name="keywords" content="macro"><a name=""></a><META name="keywords" content="<code>Cmd-R</code>">
+<p><img src="gfx/rawEdit.png" alt="gfx/rawEdit">
+</p>
+<p>You can edit a field as raw BibTeX by pressing &#8984;R
+ in the edit
+window when one of the form fields has the keyboard focus.
+</p>
+<p>See the <a href="BibDeskHelp_2.html#SEC12">BibTeX Intro</a> for more details on BibTeX with macros.
+</p>
+<p>When a field is edited as raw BibTeX, an extra view is shown below the field. 
+This shows the expanded value of the BibTeX string, or reports errors if the BibTeX 
+string you entered is not valid BibTeX. 
+Note that bare strings in raw BibTeX mode are surrounded by curly braces 
+(`{' and `}') or double-quotes (`"'). 
+</p>
+<p>The next time you try to edit a field that contains raw BibTeX, 
+the field will automatically go into raw BibteX mode.
+Text fields with raw BibTeX (e.g. a number or macro) is shown as dark blue
+in the editor, to provide a quick visual reference.
+</p>
+<p>You can use autocompletion in macro editing as well, so you don't have to remember 
+all of your cryptic abbreviations or constantly refer to the macro editor.  Edit as raw BibTeX as 
+described above, and start typing the expanded value; for a "Journal" field, this would 
+be the actual name of the journal.  Hit &#8997;
+-esc, and a 
+list of possible entries should appear (based on the @string definitions in your file), and 
+you can then insert the correct value from the list.
+</p>
+<p>
+
+</p>
+</body>
+</html>

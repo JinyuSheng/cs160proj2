@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: D. Character Conversion</title>
+
+<meta name="description" content="Character conversions in BibDesk.">
+<meta name="keywords" content="BibDesk Help: D. Character Conversion">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Character-Conversion"></a>
+<a name="SEC156"></a>
+<h1 class="appendix"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Character Conversion</h1>
+
+<a name="SEC157"></a>
+<h2 class="heading"> What is character conversion?</h2>
+
+<p>BibDesk automatically converts many accented characters into their
+TeXequivalents when it writes a BibTeX file. For instance, a u
+with umlaut 
+is converted to <code>{\"u}</code> when your file is saved, but presented as-is in
+theinterface. There are some limitations on this process;
+conversion only works when a <code>{\</code> sequence is encountered, as in the
+above example, and it only works if BibDesk has the conversion stored
+in its internal dictionary.
+</p>
+<a name="SEC158"></a>
+<h2 class="heading"> Accented characters and TeX</h2>
+
+<p>The following table was taken from The
+Not So Short Introduction to LaTeX2e&gt; (Oetiker et al., 1999).
+Depending on your TeX distribution, it may be available at
+<code>/usr/local/teTeX/share/texmf.tetex/doc/latex/general/lshort.dvi</code>, 
+or it is available from <a href="http://www.ctan.org/ctan/tex-archive/info/lshort/english/">CTAN</a>.
+</p>
+<p>Many of the accents listed in this table can be applied to characters
+other than o, as well.  
+</p>
+<p><img src="gfx/accents.png" alt="gfx/accents">
+</p>
+<p>Note: for BibTeX, it is also necessary to enclose the accent sequence in braces 
+(see the <a href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=bibaccent">TeX FAQ</a>).
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

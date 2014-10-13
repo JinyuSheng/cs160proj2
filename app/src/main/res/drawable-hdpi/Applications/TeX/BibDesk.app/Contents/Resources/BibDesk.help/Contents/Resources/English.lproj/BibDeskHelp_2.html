@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 2. BibTeX Intro</title>
+
+<meta name="description" content="Introduction to BibTeX.">
+<meta name="keywords" content="BibDesk Help: 2. BibTeX Intro">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="BibTeX-Intro"></a>
+<a name="SEC12"></a>
+<h1 class="chapter"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> BibTeX Intro</h1>
+
+<a name=""></a><META name="keywords" content="BibTeX">
+<p>BibTeX database files are in a text format with a few conventions you
+will want to know. See <a href="#Formatting-Names">Formatting Names</a> and
+ <a href="#Publication-Types">Publication Types</a>) for answers to common questions.
+</p>
+<p>It helps to know what the parts of a BibTeX file are. Here's a trivial
+example to help illustrate. First we have a <em>macro definition</em>:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>@string{PACT = "International Conference on Processors, Architectures and Compilation Techniques"}
+</pre></td></tr></table>
+<p>Next a single entry:
+</p><table><tr><td>&nbsp;</td><td><pre>@proceedings{pact02,
+	    booktitle = PACT,
+	    Year = 2002,
+	    Month = sep,
+	    Address = "Harvard Square"}
+</pre></td></tr></table>
+<p>The terminology we'll use to describe the entry is as follows:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>@publication-type{citation-key, field-name = value}
+</pre></td></tr></table>
+<p>Any value can be either a quoted string (using either <samp>`""'</samp> or <samp>`{}'</samp>) or a
+number, or a macro (like <samp>`PACT'</samp> in the above example).
+</p>
+<p><a name="Publication-Types"></a>
+</p><a name="SEC13"></a>
+<h2 class="heading"> Publication Types</h2>
+
+<p>Each publication is assigned a type, which along with carrying some
+information about the publication, determines how it will be formatted
+later in conjunction with BibTeX styles.
+</p>
+<a name="SEC14"></a>
+<h2 class="heading"> Citation Keys</h2>
+
+<p>A cite key is a unique identifier for a given reference.  BibTeX scans your document for
+occurrences of a cite command with a cite key embedded in it, and translates it into a
+properly formatted reference.  Several patterns are common
+in choosing cite keys, from simple ones such as "lastnameYEAR" to more complicated
+abbreviations of journal names and author names.  BibDesk will automatically
+generate cite keys for you (See section <a href="BibDeskHelp_43.html#SEC91">Citation Keys</a>), or you can enter your own in the editor.
+BibDesk takes a fairly strict interpretation of the valid characters for cite keys,
+and the characters "<code> "@',\#}{~%</code>" (including the space character) are never allowed,
+while you will be warned if you use one of "<code>&amp;$^</code>" in a cite key.  Cite keys are
+essentially TeX commands, so you should avoid using underscores, for instance, if you
+ever need to print the actual cite key itself.
+</p>
+<a name="SEC15"></a>
+<h2 class="heading"> Field Data</h2>
+
+<p>BibTeX defines numerous required and optional fields for each type, such as "Title" or "Author".  
+BibDesk's editor will highlight the required fields in red, and optional fields are black.
+Any field may be used with any type, however, and you can add your own fields to entries
+and use them with custom bibliography styles.  For instance, you can add a "Keywords" field
+to all of your entries, then modify a bibliography style to print out the list of keywords
+in your bibliography.
+</p>
+<p>Field entries are subject to limitations of TeX itself, and if you copy-and-paste a title 
+with characters that are special to TeX, such as <samp>`$'</samp>, errors will occur when
+processing your file with BibTeX and TeX.  Other than that, any text is valid for a
+BibTeX field, and is not limited to bibliographic information (some people store
+addresses in a BibTeX database).
+</p>
+<p><a name="Formatting-Names"></a>
+</p><a name="SEC16"></a>
+<h2 class="heading"> Formatting Names</h2>
+
+<p>Author and editor lists in BibTeX files are written as a single string
+using the word "and" as a separator between names, like this example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>"Adam Maxwell and Michael O. McCracken"
+</pre></td></tr></table>
+<p>If a name has two parts, commas are used to determine which parts are
+the first, middle and last names. For example, the following two names
+are the same:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>"Adam Maxwell" "Maxwell, Adam"
+</pre></td></tr></table>
+<p>BibTeX also handles more complicated names. Prefixes to given names
+such as <samp>`van'</samp> or <samp>`van den'</samp> and suffixes such as <samp>`Jr.'</samp> or <samp>`III'</samp> are
+OK:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>"van den Huevel, Jr., Johan A"
+</pre></td></tr></table>
+<a name="SEC17"></a>
+<h2 class="heading"> BibTeX Macros</h2>
+
+<a name=""></a><META name="keywords" content="macro">
+<p>Macros are a time saving feature that save typing when you have to
+repeat the same long journal name over and over. If you define a
+macro, you can just type the short version and BibTeX will substitute
+the full version in processing.
+</p>
+<p>Macro definitions look like this:
+</p><table><tr><td>&nbsp;</td><td><pre>@string{PACT = "International Conference on Processors, Architectures and Compilation Techniques"}
+</pre></td></tr></table>
+<p>To use the macro, just use the first part of the definition without quotes (here <code>PACT</code>) 
+as the value for a field in the BibTeX file, as in the example above.
+</p>
+<p>Note that in our example, we also used a macro <samp>`sep'</samp>, which was not
+defined in the example. Common three-letter month names are usually
+defined appropriately in your <a href="#Style-Files">Style Files</a> for the document's
+language, and may also be abbreviated depending on the citation style.
+</p>
+
+<p>BibDesk supports reading, editing and saving BibTeX macros. See
+<a href="BibDeskHelp_23.html#SEC54">Editing Fields with Macros</a> for further information.
+</p>
+<a name="SEC18"></a>
+<h2 class="heading"> BibTeX Crossrefs</h2>
+<a name=""></a><META name="keywords" content="crossref">
+<p>Crossrefs are another time saving feature, and allow changes in a single
+entry (here termed the "parent") to propagate to the entries which link to it 
+(here termed the "children").
+</p>
+<p>For example, this entry defines a single volume in a series of books, but is
+missing some key information, such as Title and Author!  This is supplied by
+the item whose cite key matches the <samp>`Crossref'</samp> field's value.
+</p>
+<table><tr><td>&nbsp;</td><td><pre>@book{book-crossref,
+	Crossref = {whole-set},
+	Edition = {Second},
+	Note = {This is a cross-referencing BOOK entry},
+	Series = {The Art of Computer Programming},
+	Title = {Seminumerical Algorithms},
+	Volume = 2,
+	Year = {{\noopsort{1973c}}1981}}
+</pre></td></tr></table>
+<p>Continuing our example, this parent entry contains the information common to
+all of the books in the series:
+</p>
+<table><tr><td>&nbsp;</td><td><pre>@book{whole-set,
+	Author = {Knuth, Donald E.},
+	Note = {Seven volumes planned (this is a cross-referenced set of BOOKs)},
+	Publisher = {Addison-Wesley},
+	Series = {Four volumes},
+	Title = {The Art of Computer Programming},
+	Year = {{\noopsort{1973a}}{\switchargs{--90}{1968}}}}
+</pre></td></tr></table>
+<p>One important caveat when working with crossreferences in BibTeX is that all parent
+items must follow their children in the file.  BibDesk can sort the items for you
+with "Sort Publications for Crossrefs" in the Publication menu, or you can
+allow BibDesk to automatically sort the items when saving (See section <a href="BibDeskHelp_74.html#SEC137">Crossref</a>).
+</p>
+<p><a name="Style-Files"></a>
+</p><a name="SEC19"></a>
+<h2 class="heading"> Style Files</h2>
+
+<p>BibTeX uses style files (extension <code>.bst</code>) to produce formatted bibliographies
+for various publishers.  You probably have numerous BibTeX styles installed on your
+computer, and many more can be found on <a href="http://ctan.tug.org/">CTAN</a>, the
+Comprehensive TeX Archive Network.
+</p>
+<p>Writing your own BibTeX style files is possible, but not recommended for the
+faint of heart (or even the not-so-faint of heart).  Patrick W. Daly's
+<a href="http://www.ctan.org/tex-archive/macros/latex/contrib/supported/custom-bib/">custom-bib</a>
+package is a valuable asset when you need a customized bibliography style, as it
+walks you through a semi-automatic creation process.
+</p>
+<a name="SEC20"></a>
+<h2 class="heading"> BibTeX References</h2>
+
+<p>The canonical reference for BibTeX itself is Oren Patashnik's
+<a href="http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf">BibTeXing</a>,
+which you may have already as <a href="file:///usr/local/teTeX/share/texmf.tetex/doc/bibtex/base/btxdoc.dvi">btxdoc.dvi</a> 
+or <a href="file:///usr/local/gwTeX/texmf.texlive/doc/bibtex/base/btxdoc.pdf">btxdoc.pdf</a> 
+in your TeX tree. Standard references such as <samp>`The LaTeX Companion'</samp> are very
+helpful in understanding and debugging BibTeX, and searching the
+<a href="http://www.tex.ac.uk/cgi-bin/texfaq2html">TeX FAQ</a> is usually a
+good idea as well.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

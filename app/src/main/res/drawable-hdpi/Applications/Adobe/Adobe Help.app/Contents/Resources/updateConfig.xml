@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	File modelled around the example at URL,
+	http://help.adobe.com/en_US/AIR/1.5/devappsflex/WS5b3ccc516d4fbf351e63e3d118666ade46-7ff2.html#WS9CD40F06-4DD7-4230-B56A-88AA27541A1E 
+-->
+<configuration xmlns="http://ns.adobe.com/air/framework/update/configuration/1.0">
+
+	<!-- Edit the URL element of the updateConfig.xml file to match the eventual location of the update descriptor file on your web server (see the next procedure). -->
+	<url>http://www.adobe.com/support/chc/update/400/{locale}/update.xml</url>
+
+	<!-- The delay is the number of days the application waits between checks for updates. -->
+	<delay>1</delay>
+
+</configuration>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 6.1 Syntax for Z39.50 Searching</title>
+
+<meta name="description" content="Syntax for searching z39.50 databases">
+<meta name="keywords" content="BibDesk Help: 6.1 Syntax for Z39.50 Searching">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Syntax-for-Z39_002e50-Searching"></a>
+<a name="SEC88"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Syntax for Z39.50 Searching</h2>
+
+<a name=""></a><META name="keywords" content="z39.50">
+<p>To search a z39.50 database, simply enter one or more terms into the  
+z39.50 search field:
+</p><table><tr><td>&nbsp;</td><td><pre>morgenthau politics
+</pre></td></tr></table><p>This will return all records that contain both <samp>`morgenthau'</samp> and  
+<samp>`politics'</samp>. These search terms can appear in any field, 
+and all the words are matched (each token is implicitly AND-ed.) 
+</p>
+<p>To search for a phrase, put it in quotes:
+</p><table><tr><td>&nbsp;</td><td><pre>morgenthau "politics among"
+</pre></td></tr></table><p>To search in a particular field (see below for valid fields), enter a  
+string of the following kind into the z39.50 search field:
+</p><table><tr><td>&nbsp;</td><td><pre>foo=SearchForMe
+</pre></td></tr></table><p>where <samp>`foo'</samp> is an index specifying the fields of database records to
+be searched, and <samp>`SearchForMe'</samp> is the text string of interest. 
+</p>
+<p>For example, a search for works written by Sewall Wright can be
+conducted as follows:
+</p><table><tr><td>&nbsp;</td><td><pre>au="Wright, Sewall"
+</pre></td></tr></table><p>The indexes available in BibDesk are represented in the table
+below. If a search supports relations, operators such as <samp>`&gt;'</samp>, <samp>`&lt;'</samp>,
+<samp>`&lt;&gt;'</samp>, <samp>`&lt;='</samp>, and <samp>`&gt;='</samp> can be used, for instance, to search for works
+published after a certain year. Note that, though the use of relations
+is supported in BibDesk, many z39.50 servers do not support them.
+</p>
+<p>For more information about MARC fields that are searched, consult OCLC's 
+<a href="http://www.oclc.org/bibformats/default.htm">Bibliographic Formats and Standards</a> pages.
+</p>
+<p>Boolean operators may be used to search several indexes at once, as in:
+</p><table><tr><td>&nbsp;</td><td><pre>au="Wright, Sewall" and ti="livestock breeding"
+</pre></td></tr></table><p>which will find works by Wright with the phrase <samp>`livestock breeding'</samp>
+in the title. When different indexes are used, Boolean operators must be included. 
+</p>
+<table>
+<thead><tr><th><p> Index </p></th><th><p> Meaning 
+</p></th></tr></thead>
+<tr><td><p> au </p></td><td><p> Personal author name 
+</p></td><td><p> Name of a person; will not search corporate authors. See note for <samp>`af'</samp> below.
+</p></td></tr>
+<tr><td><p> ti </p></td><td><p> Title 
+</p></td><td> 
+</td></tr>
+<tr><td><p> isbn </p></td><td><p> ISBN 
+</p></td><td><p> International Standard Book Number
+</p></td></tr>
+<tr><td><p> issn </p></td><td><p> ISSN 
+</p></td><td><p> International Standard Serial Number
+</p></td></tr>
+<tr><td><p> cc </p></td><td><p> Local classification number
+ </p></td><td><p> Call number of the item in the library being queried 
+</p></td></tr>
+<tr><td><p> su </p></td><td><p> Subject key words 
+</p></td><td><p> Includes persons, corporate bodies, and meetings as subjects; includes places
+as subjects; and also includes topical terms from the LCSH controlled
+vocabulary.
+</p></td></tr>
+<tr><td><p> date </p></td><td><p> Date 
+</p></td><td><p> This includes a
+variety of different types of dates associated with the item; if you
+are looking for a publication date in particular, use <samp>`dp'</samp>. Supports relations.
+</p></td></tr>
+<tr><td><p> dp </p></td><td><p> Date of publication 
+</p></td><td><p> Supports relations.
+</p></td></tr>
+<tr><td><p> da </p></td><td><p> Acquisition date 
+</p></td><td><p> Date on which item was acquired by library being queried. Supports relations.
+</p></td></tr>
+<tr><td><p> la </p></td><td><p> Language code 
+</p></td><td><p> Language codes are defined by each library.
+</p></td></tr>
+<tr><td><p> ab </p></td><td><p> Abstract 
+</p></td><td><p> Library records rarely include abstracts.
+</p></td></tr>
+<tr><td><p> note </p></td><td><p> Note 
+</p></td><td><p> May include table of contents notes.
+</p></td></tr>
+<tr><td><p> af </p></td><td><p> Conference as author name 
+</p></td><td><p> For instance, the
+Proceedings of the Philosophy of Science Association Meeting for a
+given year might have <samp>`Philosophy of Science Association'</samp> as its
+author. Contrast with <samp>`au'</samp>, personal author name
+</p></td></tr>
+</table>
+
+
+<p>
+
+</p>
+</body>
+</html>

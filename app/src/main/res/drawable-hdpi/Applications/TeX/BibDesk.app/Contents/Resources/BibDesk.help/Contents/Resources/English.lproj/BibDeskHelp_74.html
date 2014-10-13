@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "http://www.w3.org/TR/html32/loose.dtd">
+<html>
+<!-- Created on May, 4 2013 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>BibDesk Help: 11.9 Crossref</title>
+
+<meta name="description" content="Configuring Crossref support">
+<meta name="keywords" content="BibDesk Help: 11.9 Crossref">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link href="sty/bibdeskhelp.css" rel="stylesheet" media="all" />
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Crossref-Preferences"></a>
+<p><a name="CrossrefPreferences"></a>
+</p><a name="SEC137"></a>
+<h2 class="section"> <img src="gfx/BibDeskIcon.png" alt="BibDesk"> Crossref</h2>
+
+<a name=""></a><META name="keywords" content="crossref preferences">
+<p>The Crossref pane lets you control some aspects of the Crossref support.
+</p>
+<p><img src="gfx/crossrefPrefs.png" alt="gfx/crossrefPrefs">
+</p>
+<a name="IDX54"></a><META name="keywords" content="Duplicate Title Field to Booktitle Field for Crossreferenced Types"><p><b>Duplicate Title Field to Booktitle Field for Crossreferenced Types:</b>  In a potential parent
+item, BibDesk can copy the <samp>`Title'</samp> field over to its <samp>`Booktitle'</samp> field, when you create 
+or edit it. This is a workaround for a BibTeX problem, and was suggested by BibDesk users. 
+BibTeX uses the <samp>`Title'</samp> field of an <samp>`incollection'</samp> and ignores the <samp>`Title'</samp>
+field of the corresponding <samp>`book'</samp> type (the parent item).  Copying allows any child item to
+get all of the necessary information from its parent reference.
+</p>
+<p>Since this alters your bibliography, the features is off by default, even though existing
+entries won't be overwritten.
+</p>
+<p>Similarly, a hidden preference exists to write certain fields as an empty string, and is specified
+in the Terminal (excluding outer double quotes) as 
+"<code>defaults write -app BibDesk BDSKFieldsToWriteIfEmpty '(Key)'</code>",
+where the value in parentheses can be a comma separated, capitalized list of field names.  These
+must also be default fields in the Defaults preference pane.  This can be used to prevent an item
+from inheriting its parent value.
+</p>
+<a name="IDX55"></a><META name="keywords" content="Overwrite the Booktitle"><p><b>Overwrite the Booktitle:</b> Always overwrite the <samp>`Booktitle'</samp> field when duplicating 
+the Title field, even if it is not empty.
+</p>
+<a name="IDX56"></a><META name="keywords" content="Types for which to duplicate"><p><b>Types for which to duplicate:</b>  Duplication will only occur when editing the
+types in this list, which are considered the potential parent items.  Use the "+" 
+and "-" buttons below the list to add and remove items.  
+Note that you need to click the checkbox to enable duplication before you can edit the list.
+</p>
+<a name="IDX57"></a><META name="keywords" content="Automatically Sort for Crossrefs when saving BibTeX files"><p><b>Automatically Sort for Crossrefs when saving BibTeX files:</b>  When you select
+this option, BibDesk will automatically place parent items at the end of your file,
+as required by BibTeX.  If you use CVS to track changes to your bibliography, be aware
+that this feature may introduce a large number of differences in your file!
+</p>
+<a name="IDX58"></a><META name="keywords" content="Warn me when trying to edit inherited fields"><p><b>Warn me when trying to edit inherited fields:</b>  If this option is enabled,
+BibDesk will warn you when you try to edit an inherited field.
+</p>
+
+<p>
+
+</p>
+</body>
+</html>

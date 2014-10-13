@@ -1,0 +1,36 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = ConTeXt (LuaTeX)
+
+% This source file requires LuaTeX
+
+\definecolor[bluegreen][h=4F6F6F]
+\definecolor[bluered][h=6F4F6F]
+\startTEXpage
+\startluacode
+  local colored = {
+    background = "color",
+    backgroundcolor = "bluegreen",
+    foregroundcolor = "white",
+  }
+  local basespec = {
+    framecolor = "bluered",
+    align= "middle",
+    style = "type",
+    offset=".5ex",
+  }
+  local bTR, eTR = context.bTR, context.eTR
+  local bTD, eTD = context.bTD, context.eTD
+  context.bTABLE(basespec)
+    for i=1,10 do
+      bTR()
+      for i=1,20 do
+        local r= math.random(99)
+        bTD((r < 50 and colored) or nil)
+        context("%2i",r)
+        eTD()
+      end
+      eTR()
+    end
+  context.eTABLE()
+\stopluacode
+\stopTEXpage
